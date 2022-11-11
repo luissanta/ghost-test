@@ -47,10 +47,8 @@ class PagePage {
     }
 
     waitForPublish(){
-        //button[@class= 'gh-btn gh-btn-blue gh-publishmenu-button gh-btn-icon ember-view']/span
         cy.xpath("//button[2]/span",{ timeout: 10000 }).should('have.text',"Update");
         return this
-        //this.elements.closeWindowPublish().click();            
     }
 
     closeWindowPublish(){
@@ -78,16 +76,7 @@ class PagePage {
     }
 
     selectTag(text){
-        this.elements.selectFilterTag(text).eq(0).click();
-        /*this.elements.listTag().eq(0).as("options")
-        cy
-        .get("@options")
-        .its('length')
-        .then(len => Math.floor(Math.random() * Math.floor(len)))
-        .then((index) => {
-        cy.get("@options").eq(index).click({force: true})
-        })
-        return this        */    
+        this.elements.selectFilterTag(text).eq(0).click();   
     }
 
     closePostSettings(){

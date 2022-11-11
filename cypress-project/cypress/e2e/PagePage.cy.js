@@ -62,7 +62,7 @@ describe("Cypress POM Test Suite", function () {
         page.validateTitlePagePublished(namePage1);  
         page.validateDescriptionPagePublished(descriptionPage1);  
         page2.navigatePage(namePage2);
-        page.validateDescriptionPagePublished(descriptionPage2);  
+        page2.validateDescriptionPagePublished(descriptionPage2);  
           
         
     });
@@ -113,7 +113,6 @@ describe("Cypress POM Test Suite", function () {
         page.selectSetting();
         cy.wait(3000);  
         page.listTag();
-        //cy.wait(3000);  
         page.selectTag(nameTag);
         page.closePostSettings();
         cy.wait(2000);  

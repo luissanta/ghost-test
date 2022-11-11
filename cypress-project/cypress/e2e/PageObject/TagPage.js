@@ -21,7 +21,6 @@ class TagPage {
         findValuePostPublish: () => cy.xpath("//section[@class='post-card-excerpt']/p"),
         selectTagCreated: (texto) => cy.xpath('//a[@title="List posts tagged with "'+texto+'"]'),
         countTagsByName: (name) => cy.xpath('//a[@title="List posts tagged with \''+name+'\'"]//span[@class="nowrap"]')
-        //a[@title="List posts tagged with 'f86de0b8-d128-4370-8b53-eff51658c3f0'"]//span[@class='nowrap']
         }
 
         enterEmail(username) {
