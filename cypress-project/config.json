@@ -1,0 +1,31 @@
+{
+    "siteHost":"http://20.102.114.58/ghost/",
+    "logIn":{
+        "logInUrl": "#/signin",
+        "userTagIdentifier":"#ember8",
+        "userName": "da.ramirez55@uniandes.edu.co",
+        "passTagIdentifier":"#ember10",
+        "userPass": "Cg94F4J&$#i8qjX@a9iP",
+        "actionElement":"button",
+        "actionTagIdentifier":"#ember12",
+        "nextUrlExpected": "#/site"
+    },
+    "post":{
+        "postUrl":"#/posts",
+        "postListIdentifier":"a[class='ember-view permalink gh-list-data gh-post-list-featured']",
+        "creator":{
+            "linkTitle":"New post",
+            "linkHref": "#/editor/post/",
+            "titlePlaceholder":"Post Title",
+            "titleText":"...Cypress testing creator post...",
+            "contentIdentifier":"[data-placeholder='Begin writing your post...']",
+            "contentText":"This is my test post content..."
+        },
+        "eraser":{
+            "buttonSetting":"button[class='post-settings']",
+            "buttonDelete":"button[class='gh-btn gh-btn-hover-red gh-btn-icon settings-menu-delete-button']",
+            "modalButtonConfirm": "button[class='gh-btn gh-btn-red gh-btn-icon ember-view']"
+        }
+        
+    }
+}
