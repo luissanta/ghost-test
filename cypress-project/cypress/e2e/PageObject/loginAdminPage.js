@@ -21,10 +21,20 @@ class LoginAdminPage {
             this.elements.passwordField().clear().type(pswd);
             return this
         }
-        login(){
+        clickLogin(){
             this.elements.loginBtn().click();
             return this
         }
+
+        login(){
+            this.navigate();
+            this.enterEmail("mj.beltran37@uniandes.edu.co");
+            this.enterPassword("localhostghowst");
+            //this.enterEmail("da.ramirez55@uniandes.edu.co");
+            //this.enterPassword("Cg94F4J&$#i8qjX@a9iP");
+            this.clickLogin();            
+        }
+
 
 
 }

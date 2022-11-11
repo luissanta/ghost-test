@@ -4,13 +4,6 @@ import TagPage from "./PageObject/TagPage"
 import Utility from "./PageObject/Utility"
 
 describe("Cypress POM Test Suite", function () {
-   /* it("Login with valid credentials", function () {
-        const login = new LoginAdminPage();
-        login.navigate();
-        login.enterEmail("da.ramirez55@uniandes.edu.co");
-        login.enterPassword("Cg94F4J&$#i8qjX@a9iP");
-        login.login();
-    });*/
 
     it("Edit post", function () {
 
@@ -22,9 +15,6 @@ describe("Cypress POM Test Suite", function () {
         let newValueDescription = utility.uuidv4();
 
         //when
-        login.navigate();
-        login.enterEmail("mj.beltran37@uniandes.edu.co");
-        login.enterPassword("localhostghowst");
         login.login();
         const page = new PostPage();
         page.navigate();
@@ -56,12 +46,7 @@ describe("Cypress POM Test Suite", function () {
 
         //When
         const login = new LoginAdminPage();
-        login.navigate();
-        login.enterEmail("mj.beltran37@uniandes.edu.co");
-        login.enterPassword("localhostghowst");
-        //login.enterEmail("da.ramirez55@uniandes.edu.co");
-        //login.enterPassword("Cg94F4J&$#i8qjX@a9iP");
-        login.login();
+        login.login();            
         const tag = new TagPage();
         cy.wait(1000);        
         tag.navigate();
@@ -106,15 +91,10 @@ describe("Cypress POM Test Suite", function () {
         let descriptionPost = "description"+utility.uuidv4();
 
         //When
-        const login = new LoginAdminPage();
-        login.navigate();
-        login.enterEmail("mj.beltran37@uniandes.edu.co");
-        login.enterPassword("localhostghowst");
-        //login.enterEmail("da.ramirez55@uniandes.edu.co");
-        //login.enterPassword("Cg94F4J&$#i8qjX@a9iP");
+        const login = new LoginAdminPage();      
         login.login();
         const tag = new TagPage();
-        cy.wait(1000);        
+        cy.wait(2000);        
         tag.navigate();
         tag.waitForTag();  
         cy.wait(1000); 
@@ -163,7 +143,7 @@ describe("Cypress POM Test Suite", function () {
         }        
         tag.navigate();
         cy.wait(3000);
-        
+
         //Then     
         tag.validateTagsByName(nameTag, countPostWithTag);
     });
