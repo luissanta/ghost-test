@@ -1,4 +1,6 @@
-import LoginPage from '../pages/Login'
+import LoginPage from '../pages/LoginPage'
+import CreatePostPage from '../pages/CreatePostPage'
+import PostsPage from '../pages/PostsPage'
 
 describe('Schedule post publication', () => {
 
@@ -9,23 +11,13 @@ describe('Schedule post publication', () => {
 
   // When
   it('Create and schedule post publication', () => {
-    cy.xpath("//a[@class='ember-view']").contains("Post").click({force: true})
-    cy.xpath("//span[normalize-space()='New post']").click()
-    cy.xpath("//textarea[@placeholder='Post Title']").type('¿Cómo ser el mejor Tech Lead?')
-    cy.xpath("//div[@class='koenig-editor__editor __mobiledoc-editor __has-no-content']")
-        .type('Es bastante probable que con frecuencia encuentres contenido hablando maravillas de un lenguaje en específico.')
-    cy.xpath("//span[normalize-space()='Publish']").click()
-    cy.xpath("//div[@class='gh-publishmenu-radio ']//div[@class='gh-publishmenu-radio-button']").click()
-    cy.xpath("//span[normalize-space()='Schedule']").click()
-    cy.wait(300)
-    cy.xpath("//a[@class='blue link fw4 flex items-center ember-view']")
-        .contains("Posts")
-        .click()
-  })
+    CreatePostPage.createPost(
+        '¿Cómo ser el mejor Tech Lead?',
+        'Es bastante probable que con frecuencia encuentres contenido hablando maravillas de un lenguaje en específico.'
+    )
+    CreatePostPage.schedulePostPublication()
 
   // Then
-  it('Validate scheduled post publication', () => {
-    cy.xpath("//span[@class='gh-notification-title']").contains("Scheduled")
-    cy.contains('¿Cómo ser el mejor Tech Lead?')
+    PostsPage.validateSchedulePost('¿Cómo ser el mejor Tech Lead?')
   })
 })

@@ -1,4 +1,6 @@
-import LoginPage from '../Pages/login'
+import LoginPage from '../pages/LoginPage'
+import CreatePostPage from '../pages/CreatePostPage'
+import LandingPage from '../pages/LandingPage'
 
 describe('Publish a post', () => {
 
@@ -9,26 +11,18 @@ describe('Publish a post', () => {
 
   // When
   it('Create and publish post', () => {
-    cy.xpath("//a[@class='ember-view']").contains("Post").click({force: true})
-    cy.xpath("//span[normalize-space()='New post']").click()
-    cy.xpath("//textarea[@placeholder='Post Title']").type('¿Cómo ser el mejor Full Stack Developer?')
-    cy.xpath("//div[@class='koenig-editor__editor __mobiledoc-editor __has-no-content']")
-        .type('Es bastante probable que con frecuencia encuentres contenido hablando maravillas de un lenguaje en específico.')
-    cy.xpath("//span[normalize-space()='Publish']").click()
-    cy.xpath("//button[@class='gh-btn gh-btn-blue gh-publishmenu-button gh-btn-icon ember-view']//span[contains(text(),'Publish')]")
-        .click()
-    cy.wait(300)
-    cy.xpath("//a[@class='blue link fw4 flex items-center ember-view']")
-        .contains("Posts")
-        .click()
-    cy.xpath("//button[@class='gh-notification-close']//*[name()='svg']//*[name()='path' and contains(@d,'M12.707 12')]")
-        .click()
+    CreatePostPage.createPost(
+        '¿Cómo ser el mejor Full Stack Developer?',
+        'Es bastante probable que con frecuencia encuentres contenido hablando maravillas de un lenguaje en específico.'
+    )
+    CreatePostPage.publishPost()
   })
 
   // Then
   it('Validate that the post is published', () => {
-    cy.visit('http://20.102.114.58')
-    cy.contains('¿Cómo ser el mejor Full Stack Developer?')
-    cy.contains('Es bastante probable que con frecuencia encuentres contenido hablando maravillas de un lenguaje en específico.')
+    LandingPage.ValidatePost(
+        '¿Cómo ser el mejor Full Stack Developer?',
+        'Es bastante probable que con frecuencia encuentres contenido hablando maravillas de un lenguaje en específico.'
+    )
   })
 })
