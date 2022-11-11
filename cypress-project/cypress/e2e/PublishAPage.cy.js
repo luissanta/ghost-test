@@ -1,11 +1,10 @@
+import LoginPage from '../pages/Login'
+
 describe('Publish a page', () => {
 
   // Given
   it('Login', () => {
-    cy.visit('http://20.102.114.58/ghost/')
-    cy.xpath("//input[@type='email']").type('da.ramirez55@uniandes.edu.co')
-    cy.xpath("//input[@type='password']").type('Cg94F4J&$#i8qjX@a9iP')
-    cy.xpath("//span[normalize-space()='Sign in']").click()
+    LoginPage.login('da.ramirez55@uniandes.edu.co', 'Cg94F4J&$#i8qjX@a9iP')
   })
 
   // When

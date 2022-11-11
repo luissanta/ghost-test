@@ -1,19 +1,10 @@
-import Logi from "./Pages/Logi";
-require('cypress-xpath');
+import LoginPage from '../Pages/login'
 
 describe('Publish a post', () => {
 
-  // const login = new Logi()
   // Given
   it('Login', () => {
-    cy.visit('http://20.102.114.58/ghost/')
-    cy.xpath("//input[@type='email']").type('da.ramirez55@uniandes.edu.co')
-    cy.xpath("//input[@type='password']").type('Cg94F4J&$#i8qjX@a9iP')
-    cy.xpath("//span[normalize-space()='Sign in']").click()
-    // login.login('test', 'test')
-    // Logi.typeEmail('hola')
-    // Logi.typePassword('hola')
-    // Logi.clickLogin()
+    LoginPage.login('da.ramirez55@uniandes.edu.co', 'Cg94F4J&$#i8qjX@a9iP')
   })
 
   // When
