@@ -38,6 +38,7 @@ class CreatePagePage {
         cy.wait(300)
         cy.xpath(this.buttonReturnPages).contains("Pages").click()
         cy.xpath(this.buttonCloseNotifyNewPage).click()
+        cy.wait(1000)
     }
 }
 
