@@ -1,7 +1,7 @@
-import LoginAdminPage from "./PageObject/LoginAdminPage"
-import PagePage from "./PageObject/PagePage"
-import TagPage from "./PageObject/TagPage"
-import Utility from "./PageObject/Utility"
+import LoginAdminPage from "../PageObject/LoginAdminPage"
+import PagePage from "../PageObject/PagePage"
+import TagPage from "../PageObject/TagPage"
+import Utility from "../PageObject/Utility"
 
 describe("Cypress POM Test Suite", function () {
 

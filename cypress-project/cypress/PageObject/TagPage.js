@@ -1,8 +1,8 @@
-require('cypress-xpath');
+// require('cypress-xpath');
 class TagPage {
     navigate() {
-        cy.visit('http://localhost:2368/ghost/#/tags')
-        //cy.visit('http://20.102.114.58/ghost/#/tags')
+        // cy.visit('http://localhost:2368/ghost/#/tags')
+        cy.visit('http://20.102.114.58/ghost/#/tags')
     }
 
     elements = {

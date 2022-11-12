@@ -1,12 +1,12 @@
-require('cypress-xpath');
+// require('cypress-xpath');
 class PostPage {
     navigate() {
-        cy.visit('http://localhost:2368/ghost/#/posts')
-        //cy.visit('http://20.102.114.58/ghost/#/posts')
+        // cy.visit('http://localhost:2368/ghost/#/posts')
+        cy.visit('http://20.102.114.58/ghost/#/posts')
     }
     navigateIndex() {
-        cy.visit('http://localhost:2368/')
-        //cy.visit('http://20.102.114.58/')
+        // cy.visit('http://localhost:2368/')
+        cy.visit('http://20.102.114.58/')
     }
 
     elements = {

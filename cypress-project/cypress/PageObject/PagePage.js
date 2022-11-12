@@ -1,12 +1,12 @@
-require('cypress-xpath');
+// require('cypress-xpath');
 class PagePage {
     navigate() {        
-        cy.visit('http://localhost:2368/ghost/#/pages')
-        //cy.visit('http://20.102.114.58/ghost/#/pages')
+        // cy.visit('http://localhost:2368/ghost/#/pages')
+        cy.visit('http://20.102.114.58/ghost/#/pages')
     }
     navigatePage(page) {
-        cy.visit('http://localhost:2368/'+page)
-        //cy.visit('http://20.102.114.58/')
+        // cy.visit('http://localhost:2368/'+page)
+        cy.visit('http://20.102.114.58/'+page)
     }
     elements = {
         createBtn :() => cy.xpath("//span[normalize-space()='New page']"), 
