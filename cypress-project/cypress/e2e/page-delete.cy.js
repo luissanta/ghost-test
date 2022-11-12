@@ -11,6 +11,8 @@ describe('Borrar Pagina', async ()=>{
       await logInPage.doLogIn();
       await pagesPage.createNewPage();
       await pagesPage.validExistence();
+      cy.wait(2000);
+      await pagesPage.deletePage();
     });
   
   });
