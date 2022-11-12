@@ -42,6 +42,13 @@ Then('I find the title of the published post {string}', async function(postTitle
 })
 
 
+// Validate post in admin page
+When('I find the title of the post {string}', async function(postTitle){
+    let element = await this.driver.$$("//h3[normalize-space()='"+postTitle+"']");
+    expect(element.length).to.greaterThan(0);
+})
+
+
 // Publish post
 When('I press the publish button', async function () {
     let element = await this.driver.$("//span[normalize-space()='Publish']");
@@ -148,4 +155,96 @@ When('I press the button to close the confirmation modal of the publication of a
 Then('I find the title of the published page {string}', async function(pageTitle){
     let element = await this.driver.$$("//h1[normalize-space()='"+pageTitle+"']");
     expect(element.length).to.greaterThan(0);
+})
+
+
+// Delete post
+When('I select the post to delete', async function () {
+    let element = await this.driver.$("//a[@title='Edit this post']");
+    await element.click();
+})
+When('I press the delete post button', async function () {
+    let element = await this.driver.$("//span[normalize-space()='Delete post']");
+    await element.click();
+})
+When('I press the button to confirm deletion of the post', async function () {
+    let element = await this.driver.$("//span[normalize-space()='Delete']");
+    await element.click();
+})
+
+
+// Validate delete post
+Then('I can not find any post in the list', async function(){
+    let element = await this.driver.$$("//span[normalize-space()='Write a new post']");
+    expect(element.length).to.equal(1);
+})
+
+
+// Clear ghost
+Given('I press the labs button', async function () {
+    let element = await this.driver.$("(//a[normalize-space()='Labs'])[1]");
+    await element.click();
+});
+Given('I press the delete all button', async function () {
+    let element = await this.driver.$("//span[normalize-space()='Delete']");
+    await element.click();
+});
+Given('I press the confirm delete all button', async function () {
+    let element = await this.driver.$("//button[@class='gh-btn gh-btn-red gh-btn-icon ember-view']");
+    await element.click();
+});
+Given('I press the button close deletion alert', async function () {
+    let element = await this.driver.$("//button[@class='gh-alert-close']");
+    await element.click();
+});
+
+
+// Validate page in admin page
+When('I find the title of the page {string}', async function(pageTitle){
+    let element = await this.driver.$$("//h3[normalize-space()='"+pageTitle+"']");
+    expect(element.length).to.greaterThan(0);
+})
+
+
+// Delete page
+When('I select the page to delete', async function () {
+    let element = await this.driver.$("//a[@title='Edit this page']");
+    await element.click();
+})
+When('I press the delete page button', async function () {
+    let element = await this.driver.$("//span[normalize-space()='Delete page']");
+    await element.click();
+})
+When('I press the button to confirm deletion of the page', async function () {
+    let element = await this.driver.$("//span[normalize-space()='Delete']");
+    await element.click();
+})
+
+
+// Validate delete page
+Then('I can not find any page in the list', async function(){
+    let element = await this.driver.$$("//span[normalize-space()='Create a new page']");
+    expect(element.length).to.equal(1);
+})
+
+
+// Create tag
+When('I press the create tag button', async function () {
+    let element = await this.driver.$("//span[normalize-space()='New tag']");
+    await element.click();
+})
+When('I fill the tag name field {string}', async function(tagName){
+    let element = await this.driver.$("//input[@id='tag-name']");
+    await element.setValue(tagName);
+})
+When('I press the save tag button', async function () {
+    let element = await this.driver.$("//span[normalize-space()='Save']");
+    await element.click();
+})
+
+
+// Associate tag to post
+When('I press on the tag to associate', async function () {
+    let element = await this.driver.$("//li[@aria-current='true']");
+    await element.click();
 })

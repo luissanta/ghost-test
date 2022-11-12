@@ -1,0 +1,33 @@
+Feature: Delete published post
+
+  @user1 @web
+  Scenario: Delete published post
+    Given I navigate to page "http://20.102.114.58/ghost"
+    And I enter email "da.ramirez55@uniandes.edu.co"
+    And I enter password "Cg94F4J&$#i8qjX@a9iP"
+    And I click sign in
+    And I wait for 1 seconds
+    And I press the labs button
+    And I press the delete all button
+    And I press the confirm delete all button
+    And I press the button close deletion alert
+    And I navigate to page "http://20.102.114.58/ghost"
+    When I enter the list of posts
+    And I press the create post button
+    And I fill the post title field "¿Cómo ser el mejor Full Stack Developer?"
+    And I fill the post body field "Es bastante probable que con frecuencia encuentres contenido hablando maravillas de un lenguaje en específico."
+    And I press the publish button
+    And I press the button to confirm the publication of a post
+    And I wait for 1 seconds
+    And I press the button to return to the post list
+    And I press the button to close the confirmation modal of the publication of a post
+    And I navigate to page "http://20.102.114.58"
+    And I find the title of the published post "¿Cómo ser el mejor Full Stack Developer?"
+    And I navigate to page "http://20.102.114.58/ghost"
+    And I enter the list of posts
+    And I select the post to delete
+    And I press the button to configuration
+    And I press the delete post button
+    And I press the button to confirm deletion of the post
+    And I wait for 1 seconds
+    Then I can not find any post in the list
