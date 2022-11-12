@@ -54,7 +54,7 @@ export class PagesPage{
             cy.get(this.pagesListIdent).filter((index,elementLink)=>{
                 return url == elementLink.href
             }).should('have.length', exist?1:0)
-            .and('contain',tagName);;
+            .and('contain',tagName);
         })  
     }
 
@@ -74,5 +74,10 @@ export class PagesPage{
                 cy.get("li[class='ember-power-select-option']").first().click();
             });
         });
+    }
+
+    checkUserView(){
+        let publicPageUrl = config.siteHost+(this.titleText.replaceAll(" ","-"));
+        cy.visit(publicPageUrl, {timeOut:3000}).contains(this.titleText);
     }
 }

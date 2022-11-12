@@ -1,5 +1,5 @@
 {
-    "siteHost":"http://20.102.114.58/",
+    "siteHost":"http://localhost:2368/",
     "logIn":{
         "logInUrl": "ghost/#/signin",
         "userTagIdentifier":"#ember8",
@@ -12,7 +12,7 @@
     },
     "post":{
         "postUrl":"ghost/#/posts",
-        "postListIdentifier":"a[class='ember-view permalink gh-list-data gh-post-list-featured']",
+        "postListIdentifier":"a[class='ember-view permalink gh-list-data gh-post-list-title']",
         "creator":{
             "linkTitle":"New post",
             "linkHref": "ghost/#/editor/post/",
