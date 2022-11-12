@@ -1,5 +1,5 @@
-import { LoginPage } from '../page-object/login-page.js';
-import { PagesPage } from '../page-object/pages-page.js';
+import { LoginPage } from '../../page-object-dist-1/login-page.js';
+import { PagesPage } from '../../page-object-dist-1/pages-page.js';
 
 
 describe('Borrar Pagina publicada', async ()=>{
@@ -8,7 +8,7 @@ describe('Borrar Pagina publicada', async ()=>{
 
     beforeEach(() =>{
       logInPage.doLogIn();
-      pagesPage.createNewPage(true);
+      pagesPage.createNewPage(true, "escenario borra publicada");
       cy.url().then((url)=> cy.wrap(url).as('pageUri'));
       pagesPage.checkUserView();
     })

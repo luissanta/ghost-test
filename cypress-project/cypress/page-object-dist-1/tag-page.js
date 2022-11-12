@@ -12,11 +12,10 @@ export class TagPage{
         this.tagSlugText = config.tags.creator.body.tagSlugText;
         this.saveButton = config.tags.creator.saveButton;
         this.tagsListIdentifier = config.tags.tagsListIdentifier;
-        this.tagGenUrl = this.tagUrl+"/"+this.tagNameText.replace(" ","-");
+        this.tagGenUrl = this.tagUrl+"/"+this.tagNameText.replaceAll(" ","-");
     }
 
-    async createNewTag(){
-        
+    async createNewTag(sufix=""){
         await cy.visit(this.tagUrl).then(async ()=>{
             await this.openCreatorView();
             await this.saveTagContent();
@@ -41,9 +40,11 @@ export class TagPage{
         cy.url().then(()=>{
             this.url = this.tagGenUrl + "/";
             cy.visit(this.tagUrl).then(async ()=>{
-                cy.get(this.tagsListIdentifier).filter((index,elementLink)=>{
-                    return this.url == elementLink.href
-                }).should('have.length', exist?1:0);
+                if(Cypress.$(this.tagsListIdentifier).lenght > 0){
+                    cy.get(this.tagsListIdentifier).filter((index,elementLink)=>{
+                        return this.url == elementLink.href
+                    }).should('have.length', exist?1:0);
+                }
             })  
         })
 

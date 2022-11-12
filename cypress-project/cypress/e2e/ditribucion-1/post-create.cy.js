@@ -1,5 +1,5 @@
-import { LoginPage } from '../page-object/login-page.js';
-import { PostPage } from '../page-object/post-page.js';
+import { LoginPage } from '../../page-object-dist-1/login-page.js';
+import { PostPage } from '../../page-object-dist-1/post-page.js';
 
 describe('Crear Post', () => {
 
@@ -8,7 +8,7 @@ describe('Crear Post', () => {
   
   beforeEach(() =>{
       logInPage.doLogIn();
-      postPage.createNewPost(false);
+      postPage.createNewPost(false, "escenario crea post");
       cy.url().then((url)=> cy.wrap(url).as('postUri'));
       
   })

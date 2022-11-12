@@ -15,10 +15,14 @@ export class PagesPage{
         this.modalButtonDelete = config.pages.eraser.modalButtonConfirm;
         this.publishButton = config.pages.creator.publishButton;
         this.publishConfirm = config.pages.creator.publishConfirm;
+        this.tagInput = config.pages.tagg.input;
+        this.tagSelected = config.pages.tagg.selectorCheck;
     }
 
-    async createNewPage(hadPublish){       
+    async createNewPage(hadPublish, sufix=""){
+        this.titleText = this.titleText+sufix;       
         await cy.visit(this.pagesUrl).then(async ()=>{
+            cy.wait(2000)
             await this.openEditorView();
             await this.fillPageContent();
             await this.publishPage(hadPublish);
@@ -28,7 +32,7 @@ export class PagesPage{
     openEditorView(){ 
         cy.get('a').filter((index,link)=>{
             return link.href == this.linkHref;
-        }).click();
+        }).first().click();
     }
 
     fillPageContent(){
@@ -51,10 +55,12 @@ export class PagesPage{
     validExistence(url, exist, tagName = ""){
         url = url+"/";
         cy.visit(this.pagesUrl).then(async ()=>{
-            cy.get(this.pagesListIdent).filter((index,elementLink)=>{
-                return url == elementLink.href
-            }).should('have.length', exist?1:0)
-            .and('contain',tagName);
+            if(Cypress.$(this.pagesListIdent).lenght > 0){
+                cy.get(this.pagesListIdent).filter((index,elementLink)=>{
+                    return url == elementLink.href
+                }).should('have.length', exist?1:0)
+                .and('contain',tagName);
+            }
         })  
     }
 
@@ -70,8 +76,8 @@ export class PagesPage{
 
     addTag(tagName){
         cy.get(this.buttonPageSetting).click({force:true}).then(async ()=>{
-            await cy.get("#tag-input").type(tagName).then(()=>{
-                cy.get("li[class='ember-power-select-option']").first().click();
+            await cy.get(this.tagInput).type(tagName).then(()=>{
+                cy.get(this.tagSelected).first().click();
             });
         });
     }

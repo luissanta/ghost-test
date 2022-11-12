@@ -1,6 +1,6 @@
-import { LoginPage } from '../page-object/login-page.js';
-import { TagPage } from '../page-object/tag-page.js';
-import { PostPage } from '../page-object/post-page.js';
+import { LoginPage } from '../../page-object-dist-1/login-page.js';
+import { TagPage } from '../../page-object-dist-1/tag-page.js';
+import { PostPage } from '../../page-object-dist-1/post-page.js';
 
 describe('Escenario Asociar tag a pagina', async ()=>{
     let tagPage = new TagPage();
@@ -9,9 +9,9 @@ describe('Escenario Asociar tag a pagina', async ()=>{
 
     beforeEach(() =>{
       logInPage.doLogIn();
-      tagPage.createNewTag();
+      tagPage.createNewTag("escenario asigna tag a post");
       cy.wait(2000);
-      postPage.createNewPost(false);
+      postPage.createNewPost(false, "escenario asigna tag a post");
       cy.url().then((url)=> cy.wrap(url).as('postUri'));
       cy.wait(2000);
     })

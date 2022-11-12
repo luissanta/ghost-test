@@ -1,5 +1,5 @@
-import { LoginPage } from '../page-object/login-page.js';
-import { PostPage } from '../page-object/post-page.js';
+import { LoginPage } from '../../page-object-dist-1/login-page.js';
+import { PostPage } from '../../page-object-dist-1/post-page.js';
 
 describe('Borrar Post', () => {
     let logInPage = new LoginPage();
@@ -7,7 +7,7 @@ describe('Borrar Post', () => {
     
     beforeEach(() =>{
         logInPage.doLogIn();
-        postPage.createNewPost(true);
+        postPage.createNewPost(true, " escenario borra post publicado");
         cy.url().then((url)=> cy.wrap(url).as('postUri'));
         postPage.checkUserView();
     })

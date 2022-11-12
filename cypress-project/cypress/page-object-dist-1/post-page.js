@@ -17,6 +17,8 @@ export class PostPage{
         this.modalButtonDelete = config.post.eraser.modalButtonConfirm;
         this.publishButton = config.post.creator.publishButton;
         this.publishConfirm = config.post.creator.publishConfirm;
+        this.tagInput = config.post.tagg.input;
+        this.tagSelector = config.post.tagg.selectorCheck;
     }
 
     createNewPost(hadPublish = false, sufix=""){
@@ -56,11 +58,13 @@ export class PostPage{
 
     validExistence(url, exist = true, tagName = ""){
         url = url+"/";
-        cy.visit(this.postUrl).then(async ()=>{
-            cy.get(this.postListIdent).filter((index,elementLink)=>{
-                return url == elementLink.href
-            }).should('have.length', exist?1:0)
-            .and('contain',tagName);
+        cy.visit(this.postUrl).then(async (res)=>{
+            if(Cypress.$(this.postListIdent).lenght > 0){
+                cy.get(this.postListIdent).filter((index,elementLink)=>{
+                    return url == elementLink.href
+                }).should('have.length', exist?1:0)
+                .and('contain',tagName);
+            }
         })  
     }
 
@@ -77,8 +81,8 @@ export class PostPage{
 
     addTag(tagName){
         cy.get(this.buttonPostSetting).click({force:true}).then(async ()=>{
-            await cy.get("#tag-input").type(tagName).then(()=>{
-                cy.get("li[class='ember-power-select-option']").first().click();
+            await cy.get(this.tagInput).type(tagName).then(()=>{
+                cy.get(this.tagSelector).first().click();
             });
         });
     }

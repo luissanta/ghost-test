@@ -1,5 +1,5 @@
-import { LoginPage } from '../page-object/login-page.js';
-import { PagesPage } from '../page-object/pages-page.js';
+import { LoginPage } from '../../page-object-dist-1/login-page.js';
+import { PagesPage } from '../../page-object-dist-1/pages-page.js';
 
 
 describe('Crear Pagina', ()=>{
@@ -8,7 +8,7 @@ describe('Crear Pagina', ()=>{
 
   beforeEach(() =>{
     logInPage.doLogIn();
-    pagesPage.createNewPage(false);
+    pagesPage.createNewPage(false, "escenario crea pagina");
     cy.url().then((url)=> cy.wrap(url).as('pageUri'));
   })
 

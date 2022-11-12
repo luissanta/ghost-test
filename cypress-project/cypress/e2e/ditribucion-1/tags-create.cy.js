@@ -1,5 +1,5 @@
-import { LoginPage } from '../page-object/login-page.js';
-import { TagPage } from '../page-object/tag-page.js';
+import { LoginPage } from '../../page-object-dist-1/login-page.js';
+import { TagPage } from '../../page-object-dist-1/tag-page.js';
 
 describe('Crear Tag',()=>{
     let tagPage = new TagPage();
@@ -7,7 +7,7 @@ describe('Crear Tag',()=>{
 
     beforeEach(() =>{
       logInPage.doLogIn();
-      tagPage.createNewTag();
+      tagPage.createNewTag("escenario crea tag");
       cy.wait(2000);
     })
 

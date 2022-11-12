@@ -27,6 +27,10 @@
             "buttonSetting":"button[class='post-settings']",
             "buttonDelete":"button[class='gh-btn gh-btn-hover-red gh-btn-icon settings-menu-delete-button']",
             "modalButtonConfirm": "button[class='gh-btn gh-btn-red gh-btn-icon ember-view']"
+        },
+        "tagg":{
+            "input":"#tag-input",
+            "selectorCheck":"li[class='ember-power-select-option']"
         }   
     },
     "tags":{
@@ -60,6 +64,10 @@
             "buttonSetting":"button[class='post-settings']",
             "buttonDelete":"button[class='gh-btn gh-btn-hover-red gh-btn-icon settings-menu-delete-button']",
             "modalButtonConfirm": "button[class='gh-btn gh-btn-red gh-btn-icon ember-view']"
+        },
+        "tagg":{
+            "input":"#tag-input",
+            "selectorCheck":"li[class='ember-power-select-option']"
         }
     }
 }

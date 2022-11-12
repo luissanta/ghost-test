@@ -1,5 +1,5 @@
-import { LoginPage } from '../page-object/login-page.js';
-import { PagesPage } from '../page-object/pages-page.js';
+import { LoginPage } from '../../page-object-dist-1/login-page';
+import { PagesPage } from '../../page-object-dist-1/pages-page.js';
 
 
 describe('Borrar Pagina', async ()=>{
@@ -8,7 +8,7 @@ describe('Borrar Pagina', async ()=>{
 
     beforeEach(() =>{
       logInPage.doLogIn();
-      pagesPage.createNewPage(false);
+      pagesPage.createNewPage(false, "escenario borra");
       cy.url().then((url)=> cy.wrap(url).as('pageUri'));
     })
 
