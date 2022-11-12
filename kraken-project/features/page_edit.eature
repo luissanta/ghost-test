@@ -2,7 +2,7 @@ Feature: Editar una pagina
 
 @user1 @web
 
-Scenario: Hacer Login, crear página, publicar página, editar página, logout, validar edición de página por usuario externo
+Scenario: Hacer Login, crear página, borrar página, verificación de borrado en dashboard de admin
 Given I navigate to page "http://20.102.114.58/ghost"
 When I wait for 2 seconds
 And I enter email "da.ramirez55@uniandes.edu.co"
@@ -11,6 +11,11 @@ And I enter password "Cg94F4J&$#i8qjX@a9iP"
 And I wait for 2 seconds
 And I click next
 And I wait for 2 seconds
+Given I clean data
+And I wait for 3 seconds
+Given I accept clean data
+Given I press the button close deletion alert
+And I wait for 3 seconds
 Given I navigate to page "http://20.102.114.58/ghost/#/pages"
 When I click Create page
 And I enter name page "mypage"

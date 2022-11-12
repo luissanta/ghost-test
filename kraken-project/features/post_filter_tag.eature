@@ -1,4 +1,4 @@
-Feature: Asociar tag a una pagina
+Feature: Asociar tag a un post
 
 @user1 @web
 
@@ -12,6 +12,11 @@ And I enter password "Cg94F4J&$#i8qjX@a9iP"
 And I wait for 2 seconds
 And I click next
 And I wait for 2 seconds
+Given I clean data
+And I wait for 3 seconds
+Given I accept clean data
+Given I press the button close deletion alert
+And I wait for 3 seconds
 Given I navigate to page "http://20.102.114.58/ghost/#/tags"
 And I wait for 5 seconds
 And I click on create tag 
@@ -19,7 +24,7 @@ And I enter name tag "New Tag"
 And I wait for 2 seconds
 And I click on save tag 
 And I wait for 2 seconds
-Given I navigate to page "http://20.102.114.58/ghost/#/post"
+Given I navigate to page "http://20.102.114.58/ghost/#/posts"
 When I click Create post
 And I enter name post "Name Post"
 And I enter description post "mypost"
