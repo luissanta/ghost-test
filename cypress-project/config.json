@@ -1,23 +1,23 @@
 {
-    "siteHost":"http://20.102.114.58/ghost/",
+    "siteHost":"http://localhost:2368/",
     "logIn":{
-        "logInUrl": "#/signin",
+        "logInUrl": "ghost/#/signin",
         "userTagIdentifier":"#ember8",
         "userName": "da.ramirez55@uniandes.edu.co",
         "passTagIdentifier":"#ember10",
         "userPass": "Cg94F4J&$#i8qjX@a9iP",
         "actionElement":"button",
         "actionTagIdentifier":"#ember12",
-        "nextUrlExpected": "#/site"
+        "nextUrlExpected": "ghost/#/site"
     },
     "post":{
-        "postUrl":"#/posts",
+        "postUrl":"ghost/#/posts",
         "postListIdentifier":"a[class='ember-view permalink gh-list-data gh-post-list-featured']",
         "creator":{
             "linkTitle":"New post",
-            "linkHref": "#/editor/post/",
+            "linkHref": "ghost/#/editor/post/",
             "titlePlaceholder":"Post Title",
-            "titleText":"...Cypress testing creator post...",
+            "titleText":"Cypress testing creator post",
             "contentIdentifier":"[data-placeholder='Begin writing your post...']",
             "contentText":"This is my test post content..."
         },
@@ -28,11 +28,11 @@
         }   
     },
     "tags":{
-        "tagsUrl":"#/tags",
+        "tagsUrl":"ghost/#/tags",
         "tagsListIdentifier": "a[class='ember-view gh-list-data gh-tag-list-title gh-list-cellwidth-70']",
         "creator":{
             "linkTitle": "New Tag",
-            "linkHref": "#/tags/new/",
+            "linkHref": "ghost/#/tags/new/",
             "saveButton": "button[class='gh-btn gh-btn-blue gh-btn-icon ember-view']",
             "body":{
                 "tagName":"#tag-name",
@@ -43,12 +43,12 @@
         }
     },
     "pages":{
-        "pagesUrl":"#/pages",
+        "pagesUrl":"ghost/#/pages",
         "pagesListIdentifier":"a[class='ember-view permalink gh-list-data gh-post-list-title']",
         "creator":{
-            "linkHref":"#/editor/page/",
+            "linkHref":"ghost/#/editor/page/",
             "titlePlaceholder":"Page Title",
-            "titleText":"... Creando una nueva pagina ...",
+            "titleText":"Creando una nueva pagina",
             "contentIdentifier":"[data-placeholder='Begin writing your page...']",
             "contentText":"This is my test page content..."
         },

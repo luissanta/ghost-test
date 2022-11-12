@@ -17,11 +17,12 @@ export class PostPage{
         this.modalButtonDelete = config.post.eraser.modalButtonConfirm;
     }
 
-    async createNewPost(){
+    async createNewPost(hadPublish = false, hadDelete=false){
         
         await cy.visit(this.postUrl).then(async ()=>{
             await this.openEditorView();
             await this.fillPostContent();
+            await this.publishPost(hadPublish);
         });
     }
 
@@ -35,10 +36,20 @@ export class PostPage{
         cy.get("textarea").filter((index,area)=>{
             return area.placeholder == this.titlePlaceholder;
         }).type(this.titleText);
-        
         cy.get(this.contentIdent).click().type(this.contentText,{force:true});
+
     }
 
+    publishPost(hadPublish){
+        if(hadPublish){
+            cy.get("div[class='ember-view ember-basic-dropdown-trigger  gh-btn gh-btn-outline gh-publishmenu-trigger']").click().then(()=>{
+                cy.get("button[class='gh-btn gh-btn-blue gh-publishmenu-button gh-btn-icon ember-view']").click();
+                cy.wait(2000);
+            });
+        }
+    }
+
+    //deprecated
     validExistence(exist = true){
         cy.url().then((url)=>{
             url = url+"/";
@@ -48,22 +59,44 @@ export class PostPage{
                 }).should('have.length', exist?1:0);
             })  
         })
-
     }
 
-    deletePost(postLink=null){
-        if(postLink == null){
-            cy.get(this.postListIdent).then(async (elements)=>{
-                postLink = elements[0].href;
-                await cy.visit(postLink).then(()=>{
-                    cy.get(this.buttonPostSetting).click({force:true}).then(async ()=>{
-                        await cy.get(this.buttonDeletePost).click({force:true});
-                        cy.wait(2000);
-                        await cy.get(this.modalButtonDelete).click({force:true});
-                    });
+    validExistence(url, exist = true){
+        url = url+"/";
+        cy.visit(this.postUrl).then(async ()=>{
+            cy.get(this.postListIdent).filter((index,elementLink)=>{
+                return url == elementLink.href
+            }).should('have.length', exist?1:0);
+        })  
+    }
+
+    //deprecated
+    deletePost(){
+        cy.get(this.postListIdent).then(async (elements)=>{
+            postLink = elements[0].href;
+            await cy.visit(postLink).then(()=>{
+                cy.get(this.buttonPostSetting).click({force:true}).then(async ()=>{
+                    await cy.get(this.buttonDeletePost).click({force:true});
+                    cy.wait(2000);
+                    await cy.get(this.modalButtonDelete).click({force:true});
                 });
-                await this.validExistence(false);
-            })
-        }
+            });
+            await this.validExistence(false);
+        })
+    }
+
+    deletePost(postLink){
+        cy.visit(postLink).then(()=>{
+            cy.get(this.buttonPostSetting).click({force:true}).then(async ()=>{
+                await cy.get(this.buttonDeletePost).click({force:true});
+                cy.wait(2000);
+                await cy.get(this.modalButtonDelete).click({force:true});
+            });
+        });
+    }
+
+    checkUserView(){
+        let publicPostUrl = config.siteHost+(this.titleText.replaceAll(" ","-"));
+        cy.visit(publicPostUrl, {timeOut:3000}).contains(this.titleText);
     }
 }
