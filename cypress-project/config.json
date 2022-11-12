@@ -25,7 +25,37 @@
             "buttonSetting":"button[class='post-settings']",
             "buttonDelete":"button[class='gh-btn gh-btn-hover-red gh-btn-icon settings-menu-delete-button']",
             "modalButtonConfirm": "button[class='gh-btn gh-btn-red gh-btn-icon ember-view']"
+        }   
+    },
+    "tags":{
+        "tagsUrl":"#/tags",
+        "tagsListIdentifier": "a[class='ember-view gh-list-data gh-tag-list-title gh-list-cellwidth-70']",
+        "creator":{
+            "linkTitle": "New Tag",
+            "linkHref": "#/tags/new/",
+            "saveButton": "button[class='gh-btn gh-btn-blue gh-btn-icon ember-view']",
+            "body":{
+                "tagName":"#tag-name",
+                "tagNameText":"new tag",
+                "tagSlug":"#tag-slug",
+                "tagSlugText":"newText"
+            }
         }
-        
+    },
+    "pages":{
+        "pagesUrl":"#/pages",
+        "pagesListIdentifier":"a[class='ember-view permalink gh-list-data gh-post-list-title']",
+        "creator":{
+            "linkHref":"#/editor/page/",
+            "titlePlaceholder":"Page Title",
+            "titleText":"... Creando una nueva pagina ...",
+            "contentIdentifier":"[data-placeholder='Begin writing your page...']",
+            "contentText":"This is my test page content..."
+        },
+        "eraser":{
+            "buttonSetting":"button[class='post-settings']",
+            "buttonDelete":"button[class='gh-btn gh-btn-hover-red gh-btn-icon settings-menu-delete-button']",
+            "modalButtonConfirm": "button[class='gh-btn gh-btn-red gh-btn-icon ember-view']"
+        }
     }
 }
