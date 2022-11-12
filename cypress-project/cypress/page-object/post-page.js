@@ -15,9 +15,11 @@ export class PostPage{
         this.buttonPostSetting = config.post.eraser.buttonSetting;
         this.buttonDeletePost = config.post.eraser.buttonDelete;
         this.modalButtonDelete = config.post.eraser.modalButtonConfirm;
+        this.publishButton = config.post.creator.publishButton;
+        this.publishConfirm = config.post.creator.publishConfirm;
     }
 
-    async createNewPost(hadPublish = false, hadDelete=false){
+    async createNewPost(hadPublish = false){
         
         await cy.visit(this.postUrl).then(async ()=>{
             await this.openEditorView();
@@ -42,24 +44,13 @@ export class PostPage{
 
     publishPost(hadPublish){
         if(hadPublish){
-            cy.get("div[class='ember-view ember-basic-dropdown-trigger  gh-btn gh-btn-outline gh-publishmenu-trigger']").click().then(()=>{
-                cy.get("button[class='gh-btn gh-btn-blue gh-publishmenu-button gh-btn-icon ember-view']").click();
+            cy.get(this.publishButton).click().then(()=>{
+                cy.get(this.publishConfirm).click();
                 cy.wait(2000);
             });
         }
     }
 
-    //deprecated
-    validExistence(exist = true){
-        cy.url().then((url)=>{
-            url = url+"/";
-            cy.visit(this.postUrl).then(async ()=>{
-                cy.get(this.postListIdent).filter((index,elementLink)=>{
-                    return url == elementLink.href
-                }).should('have.length', exist?1:0);
-            })  
-        })
-    }
 
     validExistence(url, exist = true){
         url = url+"/";
@@ -70,20 +61,6 @@ export class PostPage{
         })  
     }
 
-    //deprecated
-    deletePost(){
-        cy.get(this.postListIdent).then(async (elements)=>{
-            postLink = elements[0].href;
-            await cy.visit(postLink).then(()=>{
-                cy.get(this.buttonPostSetting).click({force:true}).then(async ()=>{
-                    await cy.get(this.buttonDeletePost).click({force:true});
-                    cy.wait(2000);
-                    await cy.get(this.modalButtonDelete).click({force:true});
-                });
-            });
-            await this.validExistence(false);
-        })
-    }
 
     deletePost(postLink){
         cy.visit(postLink).then(()=>{

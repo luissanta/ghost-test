@@ -37,8 +37,8 @@ export class TagPage{
         });
     }
 
-    validExistence(exist = true){
-        cy.url().then((url)=>{
+    validExistence(exist){
+        cy.url().then(()=>{
             this.url = this.tagGenUrl + "/";
             cy.visit(this.tagUrl).then(async ()=>{
                 cy.get(this.tagsListIdentifier).filter((index,elementLink)=>{

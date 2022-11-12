@@ -1,5 +1,5 @@
 {
-    "siteHost":"http://localhost:2368/",
+    "siteHost":"http://20.102.114.58/",
     "logIn":{
         "logInUrl": "ghost/#/signin",
         "userTagIdentifier":"#ember8",
@@ -19,7 +19,9 @@
             "titlePlaceholder":"Post Title",
             "titleText":"Cypress testing creator post",
             "contentIdentifier":"[data-placeholder='Begin writing your post...']",
-            "contentText":"This is my test post content..."
+            "contentText":"This is my test post content...",
+            "publishButton":"div[class='ember-view ember-basic-dropdown-trigger  gh-btn gh-btn-outline gh-publishmenu-trigger']",
+            "publishConfirm":"button[class='gh-btn gh-btn-blue gh-publishmenu-button gh-btn-icon ember-view']"
         },
         "eraser":{
             "buttonSetting":"button[class='post-settings']",
@@ -50,7 +52,9 @@
             "titlePlaceholder":"Page Title",
             "titleText":"Creando una nueva pagina",
             "contentIdentifier":"[data-placeholder='Begin writing your page...']",
-            "contentText":"This is my test page content..."
+            "contentText":"This is my test page content...",
+            "publishButton":"div[class='ember-view ember-basic-dropdown-trigger  gh-btn gh-btn-outline gh-publishmenu-trigger']",
+            "publishConfirm":"button[class='gh-btn gh-btn-blue gh-publishmenu-button gh-btn-icon ember-view']"
         },
         "eraser":{
             "buttonSetting":"button[class='post-settings']",

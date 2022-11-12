@@ -13,12 +13,15 @@ export class PagesPage{
         this.buttonPageSetting = config.pages.eraser.buttonSetting;
         this.buttonDeletePage = config.pages.eraser.buttonDelete;
         this.modalButtonDelete = config.pages.eraser.modalButtonConfirm;
+        this.publishButton = config.pages.creator.publishButton;
+        this.publishConfirm = config.pages.creator.publishConfirm;
     }
 
-    async createNewPage(){       
+    async createNewPage(hadPublish){       
         await cy.visit(this.pagesUrl).then(async ()=>{
             await this.openEditorView();
             await this.fillPageContent();
+            await this.publishPage(hadPublish);
         });
     }
 
@@ -36,33 +39,33 @@ export class PagesPage{
         cy.get(this.contentIdent).click().type(this.contentText ,{force:true});
     }
 
-    validExistence(exist = true, tagName = "" ){
-        cy.url().then((url)=>{
-            url = url+"/";
-            cy.visit(this.pagesUrl).then(async ()=>{
-                cy.get(this.pagesListIdent).filter((index,elementLink)=>{
-                    console.log(elementLink);
-                    return url == elementLink.href
-                }).should('have.length', exist?1:0)
-                .and('contain',tagName);
-            })  
-        })
+    publishPage(hadPublish){
+        if(hadPublish){
+            cy.get(this.publishButton).click().then(()=>{
+                cy.get(this.publishConfirm).click();
+                cy.wait(2000);
+            });
+        }
     }
 
-    deletePage(pageLink=null){
-        if(pageLink == null){
-            cy.get(this.pagesListIdent).then(async (elements)=>{
-                pageLink = elements[0].href;
-                await cy.visit(pageLink).then(()=>{
-                    cy.get(this.buttonPageSetting).click({force:true}).then(async ()=>{
-                        await cy.get(this.buttonDeletePage).click({force:true});
-                        cy.wait(2000);
-                        await cy.get(this.modalButtonDelete).click({force:true});
-                    });
-                });
-                await this.validExistence(false);
-            })
-        }
+    validExistence(url, exist, tagName = ""){
+        url = url+"/";
+        cy.visit(this.pagesUrl).then(async ()=>{
+            cy.get(this.pagesListIdent).filter((index,elementLink)=>{
+                return url == elementLink.href
+            }).should('have.length', exist?1:0)
+            .and('contain',tagName);;
+        })  
+    }
+
+    deletePage(pageLink){
+        cy.visit(pageLink).then(()=>{
+            cy.get(this.buttonPageSetting).click({force:true}).then(async ()=>{
+                await cy.get(this.buttonDeletePage).click({force:true});
+                cy.wait(2000);
+                await cy.get(this.modalButtonDelete).click({force:true});
+            });
+        });
     }
 
     addTag(tagName){
