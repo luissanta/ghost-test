@@ -11,9 +11,9 @@ Diego Alejandro Ramírez
 [Descripción de funcionalidades](#funcionalidades)<br>
 [Descripción de escenarios de pruebas](#escenarios-de-pruebas) <br>
 [Cypress (pros y contras)](#cypress) <br>
-[Pruebas en Cypress]() <br>
+[Pruebas en Cypress](./cypress-project/) <br>
 [Kraken (pros y contras)](#kraken)<br>
-[Pruebas en Kraken]() <br>
+[Pruebas en Kraken](./kraken-project/) <br>
 [Estrategias de pruebas modificadas]()
 
 # Versiones de software requeridos para la ejecución de los proyectos
