@@ -2,7 +2,7 @@
 ***Por favor asegurese de instalar las dependencias requeridas, las puede consultar [aca](../README.md#versiones-de-software-requeridos-para-la-ejecución-de-los-proyectos)***. <br>
 Es importante que adicional a las dependencias mencionadas, tenga instalado:
 * [Android Studio + SDK](https://developer.android.com/studio?hl=es-419&gclid=Cj0KCQiAyMKbBhD1ARIsANs7rEH2zsb71mQ0kZhbsj5HxiuijuPeHdkv-66wrNd9WJnOpI1sJ9VU3KMaAlRrEALw_wcB&gclsrc=aw.ds)
-* Appium, este se puede instalar con el comando `npm install -g appium`
+* Appium, este se instala con el comando `npm install -g appium`
 ## Pasos de ejecución de pruebas
 1. Descargue el repositorio con el comando `git clone https://github.com/luissanta/ghost-test.git`
 2. Navegue en la terminal hasta la carpeta 'cypress-project' con el comnando `cd ghost-test/kraken-project`
