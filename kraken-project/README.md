@@ -1,5 +1,8 @@
 # Instrucciones de ejecución de pruebas en Kraken
 ***Por favor asegurese de instalar las dependencias requeridas, las puede consultar [aca](../README.md#versiones-de-software-requeridos-para-la-ejecución-de-los-proyectos)***. <br>
+Es importante que adicional a las dependencias mencionadas, tenga instalado:
+* Android Studio + SDK
+* Appium
 ## Pasos de ejecución de pruebas
 1. Descargue el repositorio con el comando `git clone https://github.com/luissanta/ghost-test.git`
 2. Navegue en la terminal hasta la carpeta 'cypress-project' con el comnando `cd ghost-test/kraken-project`
