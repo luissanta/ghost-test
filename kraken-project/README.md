@@ -1,7 +1,7 @@
 # Instrucciones de ejecución de pruebas en Kraken
 ***Por favor asegurese de instalar las dependencias requeridas, las puede consultar [aca](../README.md#versiones-de-software-requeridos-para-la-ejecución-de-los-proyectos)***. <br>
 Es importante que adicional a las dependencias mencionadas, tenga instalado:
-* Android Studio + SDK
+* [Android Studio + SDK] (https://developer.android.com/studio?hl=es-419&gclid=Cj0KCQiAyMKbBhD1ARIsANs7rEH2zsb71mQ0kZhbsj5HxiuijuPeHdkv-66wrNd9WJnOpI1sJ9VU3KMaAlRrEALw_wcB&gclsrc=aw.ds)
 * Appium
 ## Pasos de ejecución de pruebas
 1. Descargue el repositorio con el comando `git clone https://github.com/luissanta/ghost-test.git`
