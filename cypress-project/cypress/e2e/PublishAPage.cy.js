@@ -6,26 +6,24 @@ let config = require('../../config.json')
 
 describe('Publish a page', () => {
 
-  // Given
-  it('Login', () => {
-    LoginPage.login(config.logIn.userName, config.logIn.userPass)
-  })
 
-  // When
   it('Create and publish page', () => {
+    //Given
+    LoginPage.login(config.logIn.userName, config.logIn.userPass)
+    
+    //When
     CreatePagePage.createPage(
         '¿Cómo ser feliz?',
         'Aunque no puedes evitar muchas de las dificultades que encontrarás en la vida, puedes controlar cómo reaccionarás.'
     )
-    CreatePagePage.publishPage()
-  })
 
-  // Then
-  it('Validate that the page is published', () => {
+    //Then
+    CreatePagePage.publishPage()
+    cy.wait(2000)
     LandingPage.ValidatePage(
-        '¿Cómo ser feliz?',
-        'Aunque no puedes evitar muchas de las dificultades que encontrarás en la vida, puedes controlar cómo reaccionarás.',
-        'como-ser-feliz'
-    )
+      '¿Cómo ser feliz?',
+      'Aunque no puedes evitar muchas de las dificultades que encontrarás en la vida, puedes controlar cómo reaccionarás.',
+      'como-ser-feliz'
+  )
   })
 })
