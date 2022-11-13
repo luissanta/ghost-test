@@ -9,8 +9,8 @@ Es importante que adicional a las dependencias mencionadas, tenga instalado:
 3. Note que dentro de la carpeta de features existen varios archivos que **NO** tienen la extensión .feature.<br>
 Dado que Kraken no permite la ejecución de varios tests en serie, usted deberá modificar la extensión de las prueba que requiera ejecutar y asegurarse que sea '.feature'.<br>
 **Ejemplo:** <br>
-Nombre original del archivo: `_create-page.featur_ `<br>
-Nombre que debe quedar para poder ejecutar la prueba: `_create-page.feature_` <br>
+Nombre original del archivo: `create-page.featur`<br>
+Nombre que debe quedar para poder ejecutar la prueba: `create-page.feature` <br>
 Es importante, por lo mencionado anteriormente, que exista un único archivo con la extensión '.feature', por lo tanto, si está probando múltiples archivos no olvide ir ajustando la extensión de los archivos.
 4. Ejecute el comando `kraken-node run`
 
