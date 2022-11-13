@@ -1,0 +1,82 @@
+Feature: Asociar tag a una pagina
+
+@user1 @web
+
+Scenario: Hacer Login, crear tag, crear post1, crear post1, añadir tag a post1 y post2, validar tags en post desde el home
+
+Given I navigate to page "http://20.102.114.58/ghost"
+When I wait for 2 seconds
+And I enter email "da.ramirez55@uniandes.edu.co"
+And I wait for 2 seconds
+And I enter password "Cg94F4J&$#i8qjX@a9iP"
+And I wait for 2 seconds
+And I click next
+And I wait for 2 seconds
+Given I clean data
+And I wait for 3 seconds
+Given I accept clean data
+Given I press the button close deletion alert
+And I wait for 3 seconds
+Given I navigate to page "http://20.102.114.58/ghost/#/tags"
+And I wait for 5 seconds
+And I click on create tag 
+And I enter name tag "New Tag"
+And I wait for 2 seconds
+And I click on save tag 
+And I wait for 2 seconds
+Given I navigate to page "http://20.102.114.58/ghost/#/posts"
+
+When I click Create post
+And I enter name post "Name Postnn"
+And I enter description post "mypost"
+And I wait for 2 seconds
+And I click selectPublish
+And I click publish
+And I wait for 5 seconds
+And I click on close publish window
+And I wait for 5 seconds
+And I enter description post "editmypost"
+And I wait for 5 seconds
+And I click on setting
+And I wait for 3 seconds
+And I click on list tags
+And I wait for 3 seconds
+And I click on exist tag "New Tag"
+And I wait for 3 seconds
+And I click on close setting
+And I wait for 3 seconds
+And I click selectPublish
+And I click publish
+And I wait for 5 seconds
+And I click on close publish window
+And I wait for 5 seconds
+Given I click on return to posts
+And I wait for 2 seconds
+When I click Create post
+And I enter name post "Name Postnn1"
+And I enter description post "mypost"
+And I wait for 2 seconds
+And I click selectPublish
+And I click publish
+And I wait for 5 seconds
+And I click on close publish window
+And I wait for 5 seconds
+And I enter description post "editmypost"
+And I wait for 5 seconds
+And I click on setting
+And I wait for 3 seconds
+And I click on list tags
+And I wait for 3 seconds
+And I click on exist tag "New Tag"
+And I wait for 3 seconds
+And I click on close setting
+And I wait for 3 seconds
+And I click selectPublish
+And I click publish
+And I wait for 5 seconds
+And I click on close publish window
+And I wait for 5 seconds
+Given I navigate to page "http://20.102.114.58/"
+When I wait for 5 seconds
+Then I should validate post is linked to tags "New Tag"
+
