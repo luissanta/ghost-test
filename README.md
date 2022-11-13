@@ -179,7 +179,8 @@ A continuación se detalla cómo se ajustaron las estrategias de pruebas respect
 ## Estrategia de pruebas 1
 Se evaluaron 2 herramientas (Cypress y Kraken), sin embargo se decidio usar Cypress porque cuenta con una documentación más completa y la curva de aprendizaje es más corta. <br>
 De esta manera fue descartado el uso de Kraken dado que la curva de aprendizaje es mas alta, la documentación es inexistente y la comunidad esta en una fase inicial de crecimiento, lo cual consideramos un riesgo alto puesto que existe la posibilidad de que el proyecto sea abandonado.<br>
-En conclusión: dado que previamente contemplabamos el uso de Cypress en la estrategia, no es necesario hacer ninguna modificacion durante la iteracion 3 de pruebas de aceptación.
+En conclusión: dado que previamente contemplabamos el uso de Cypress en la estrategia, no es necesario hacer ninguna modificacion durante la iteracion 3 de pruebas de aceptación.<br>
+El archivo de la estrategia de pruebas se encuentra en la [siguiente ubicación](./estrategias-pruebas/)
 ## Estrategia de pruebas 2
 En la semana actual (semana 5) se decidió incluir el uso de Cypress para el desarrollo de pruebas E2E (2 escenarios de pruebas).<br>
 Estas pruebas se incluirán como parte de las pruebas de sistema ya existentes en el cronograma y se destinaron 3 horas del ingeniero junior para tal fin.<br>
