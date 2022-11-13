@@ -1,5 +1,5 @@
 # Ambiente de Ghost
-Haciendo uso de Microsoft Azure, de desplegó un servidor en donde se instaló Ghost. <br>
+Haciendo uso de Microsoft Azure, se desplegó un servidor en donde se instaló Ghost. <br>
 Todas las pruebas están ajustadas apuntando hacia el ambiente de Ghost en la URL http://20.102.114.58/ghost
 
 # Integrantes del equipo 
