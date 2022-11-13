@@ -25,6 +25,7 @@ Diego Alejandro Ramírez - da.ramirez55@uniandes.edu.co
 Ghost: 3.41.1 <br>
 Node: 14.20.1 <br>
 npm: 6.14.17 <br>
+xpath: ^2.0.3 <br>
 Kraken-Node: 1.0.24 <br>
 Cypress: ^10.10.1 <br>
 Google Chrome: 107.0.5304.107 (Build oficial) (64 bits) <br>
