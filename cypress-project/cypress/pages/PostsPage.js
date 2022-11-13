@@ -1,4 +1,4 @@
-class TagsPage {
+class PostPage {
     constructor () {
         this.buttonDialogSchedules = "//span[@class='gh-notification-title']"
     }
@@ -9,4 +9,4 @@ class TagsPage {
     }
 }
 
-export default new TagsPage();
+export default new PostPage();

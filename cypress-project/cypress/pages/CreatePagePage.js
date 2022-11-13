@@ -35,9 +35,10 @@ class CreatePagePage {
     publishPage = () => {
         cy.xpath(this.buttonPublish).click()
         cy.xpath(this.buttonPublishNow).click()
-        cy.wait(300)
+        cy.wait(2000)
         cy.xpath(this.buttonReturnPages).contains("Pages").click()
         cy.xpath(this.buttonCloseNotifyNewPage).click()
+        cy.wait(2000)
     }
 }
 

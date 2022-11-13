@@ -1,16 +1,20 @@
+let config = require('../../config.json')
+
 class LandingPage {
     constructor () {
-        this.urlLanding = "http://20.102.114.58"
+        this.urlLanding = config.siteHost;
     }
 
     ValidatePost = (postTitle, postBody) => {
         cy.visit(this.urlLanding)
+        cy.wait(2000);
         cy.contains(postTitle)
         cy.contains(postBody)
     }
 
     ValidatePage = (pageTitle, pageBody, urlPage) => {
-        cy.visit(this.urlLanding + '/' + urlPage)
+        cy.visit(this.urlLanding + urlPage)
+        cy.wait(2000);
         cy.contains(pageTitle)
         cy.contains(pageBody)
     }
