@@ -1,8 +1,9 @@
-// require('cypress-xpath');
+let config = require('../../config.json');
+
 class TagPage {
     navigate() {
-        // cy.visit('http://localhost:2368/ghost/#/tags')
-        cy.visit('http://20.102.114.58/ghost/#/tags')
+        cy.visit(config.siteHost+'ghost/#/tags')
+        //cy.visit('http://20.102.114.58/ghost/#/tags')
     }
 
     elements = {

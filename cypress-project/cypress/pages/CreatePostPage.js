@@ -20,7 +20,9 @@ class CreatePostPage {
 
     createPost = (postTitle, postBody) => {
         cy.xpath(this.buttonPosts).contains("Post").click({force: true})
+        cy.wait(2000);
         cy.xpath(this.buttonCreatePost).click()
+        cy.wait(2000);
         cy.xpath(this.postTitle).type(postTitle)
         cy.xpath(this.postBody).type(postBody)
     }

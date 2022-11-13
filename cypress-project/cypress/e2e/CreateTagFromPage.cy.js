@@ -2,11 +2,13 @@ import LoginPage from '../pages/LoginPage'
 import CreatePagePage from '../pages/CreatePagePage'
 import TagsPage from '../pages/TagsPage'
 
+let config = require('../../config.json')
+
 describe('Create tag from page', () => {
 
   // Given
   it('Login', () => {
-    LoginPage.login('da.ramirez55@uniandes.edu.co', 'Cg94F4J&$#i8qjX@a9iP')
+    LoginPage.login(config.logIn.userName, config.logIn.userPass)
   })
 
   // When

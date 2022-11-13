@@ -1,7 +1,9 @@
+let config = require('../../config.json');
+
 class LoginAdminPage {
     navigate() {
-        // cy.visit('http://localhost:2368/ghost')
-        cy.visit('http://20.102.114.58/ghost')
+        cy.visit(config.siteHost+'ghost')
+        //cy.visit('http://20.102.114.58/ghost')
     }
 
     elements = {
@@ -30,8 +32,8 @@ class LoginAdminPage {
             this.navigate();
             // this.enterEmail("mj.beltran37@uniandes.edu.co");
             // this.enterPassword("localhostghowst");
-            this.enterEmail("da.ramirez55@uniandes.edu.co");
-            this.enterPassword("Cg94F4J&$#i8qjX@a9iP");
+            this.enterEmail(config.logIn.userName);
+            this.enterPassword(config.logIn.userPass);
             this.clickLogin();            
         }
 

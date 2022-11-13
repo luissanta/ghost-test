@@ -1,6 +1,8 @@
+let config = require('../../config.json');
+
 class LoginPage {
     constructor () {
-        this.url = "http://20.102.114.58/ghost/";
+        this.url = config.siteHost+"ghost/#/signin";
         this.email = "//input[@type='email']";
         this.password = "//input[@type='password']";
         this.button = "//span[normalize-space()='Sign in']";
