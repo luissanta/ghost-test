@@ -2,14 +2,6 @@ const { Given, When, Then } = require('@cucumber/cucumber');
 const expect = require('chai').expect;
 
 //Login
-When('I enter email {string}', async function (email) {
-    let element = await this.driver.$('#ember8');
-    return await element.setValue(email);
-});
-When('I enter password {string}', async function (password) {
-    let element = await this.driver.$('#ember10');
-    return await element.setValue(password);
-});
 When('I click next', async function() {
     let element = await this.driver.$('#ember12');
     return await element.click();
@@ -228,8 +220,4 @@ Given('I clean data', async function () {
 Given('I accept clean data', async function () {   
     let element4 = await this.driver.$("//button[@class='gh-btn gh-btn-red gh-btn-icon ember-view']");
     await element4.click();
-});
-Given('I press the button close deletion alert', async function () {
-    let element = await this.driver.$("//button[@class='gh-alert-close']");
-    await element.click();
 });

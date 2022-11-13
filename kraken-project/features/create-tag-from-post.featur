@@ -3,10 +3,12 @@ Feature: Create tag from post
   @user1 @web
   Scenario: Create tag from post
     Given I navigate to page "http://20.102.114.58/ghost"
+     And I wait for 2 seconds
     And I enter email "da.ramirez55@uniandes.edu.co"
     And I enter password "Cg94F4J&$#i8qjX@a9iP"
+    And I wait for 2 seconds
     And I click sign in
-    And I wait for 1 seconds
+    And I wait for 2 seconds
     When I enter the list of posts
     And I press the create post button
     And I fill the post title field "¿Cómo ser el mejor Tech Lead?"
