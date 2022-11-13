@@ -5,7 +5,7 @@ Es importante que adicional a las dependencias mencionadas, tenga instalado:
 * Appium, este se instala con el comando `npm install -g appium`
 ## Pasos de ejecución de pruebas
 1. Descargue el repositorio con el comando `git clone https://github.com/luissanta/ghost-test.git`
-2. Navegue en la terminal hasta la carpeta 'cypress-project' con el comnando `cd ghost-test/kraken-project`
+2. Navegue en la terminal hasta la carpeta 'kraken-project' con el comnando `cd ghost-test/kraken-project`
 3. Note que dentro de la carpeta de features existen varios archivos que **NO** tienen la extensión .feature.<br>
 Dado que Kraken no permite la ejecución de varios tests en serie, usted deberá modificar la extensión de las prueba que requiera ejecutar y asegurarse que sea '.feature'.<br>
 **Ejemplo:** <br>
