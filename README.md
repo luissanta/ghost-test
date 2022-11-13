@@ -1,3 +1,7 @@
+# Ambiente de Ghost
+Haciendo uso de Microsoft Azure, de desplegó un servidor en donde se instaló Ghost. <br>
+Todas las pruebas están ajustadas apuntando hacia el ambiente de Ghost en la URL http://20.102.114.58/ghost
+
 # Integrantes del equipo 
 
 Luis Fernando Santa - l.santa@uniandes.edu.co<br>
@@ -82,15 +86,18 @@ En la descripción de cada escenario se indica el objetivo principal de la prueb
 |                  |                                                                                        | ·       Crear post                                                                                                    |
 |                  |                                                                                        | ·       Añadir tag creado al post                                                                                     |
 |                  |                                                                                        | ·       Validar la asociación del tag al post en el portal de administrador                                           |
-| ESCP09           | Check                                                                                  | Check                                                                                                                 |
+| ESCP09           | Borrar todo el contenido del ambiente de Ghost                                                                                  | ·     Log-in                                                      
+|||· Borrar todo el contenido actual de Ghost|                                                           |
 | ESCP10           | Validar la programación de la publicación de un post                                   | ·       Log-in                                                                                                        |
 |                  |                                                                                        | ·       Crear un post                                                                                                 |
 |                  |                                                                                        | ·       Programar la publicación del post                                                                             |
 |                  |                                                                                        | ·       Validar el estado ‘scheduled’ en el portal de administrador                                                   |
-| ESCP11           | Validar el correcto funcionamiento del filtro de estados de post para el valor ‘draft’ | ·       Log-in                                                                                                        |
+| ESCP11           | Validar el correcto funcionamiento de la despublicación de un post | ·       Log-in                                                                                                        |
 |                  |                                                                                        | ·       Crear post y dejarlo en estado ‘draft’                                                                        |
-|                  |                                                                                        | ·       Crear post y publicarlo                                                                                       |
-|                  |                                                                                        | ·       Validar en el portal de administrador la cantidad correcta de posts en el estado ‘draft’ utilizando el filtro |
+|                  |                                                                                        | ·       Publicar post                                                                                       |
+|                  |                                                                                        | ·       Validar como usuario externo la publicación del post |
+|||· Despublicar el post|
+|||· Validar como usuario externo la despublicación  del post|
 | ESCP12           | Validar el correcto funcionamiento de filtro de tags                                   | ·       Log-in                                                                                                        |
 |                  |                                                                                        | ·       Crear de manera aleatoria entre 3 y 6 posts                                                                   |
 |                  |                                                                                        | ·       Crear tag                                                                                                     |
