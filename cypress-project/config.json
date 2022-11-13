@@ -1,5 +1,5 @@
 {
-    "siteHost":"http://localhost:2368/",
+    "siteHost":"http://20.102.114.58/",
     "logIn":{
         "logInUrl": "ghost/#/signin",
         "userTagIdentifier":"#ember8",
@@ -69,5 +69,10 @@
             "input":"#tag-input",
             "selectorCheck":"li[class='ember-power-select-option']"
         }
+    },
+    "labs":{
+        "labsUrl":"ghost/#/settings/labs",
+        "cleanButton":"button[class='gh-btn gh-btn-hover-red js-delete']",
+        "deleteConfirm":"button[class='gh-btn gh-btn-red gh-btn-icon ember-view']"
     }
 }

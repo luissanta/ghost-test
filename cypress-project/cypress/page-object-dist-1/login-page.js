@@ -13,11 +13,11 @@ export class LoginPage{
         this.adminUrl = config.siteHost+config.logIn.nextUrlExpected;
     }
 
-    async doLogIn() {
-        await cy.visit(this.logInUrl);
-        await cy.get(this.usrTag).type(this.usrText);
-        await cy.get(this.pssTag).type(this.pssText);
-        await cy.get(this.actionTag).click({multiple: true, timeout:2000}).then(() =>{
+    doLogIn() {
+        cy.visit(this.logInUrl);
+        cy.get(this.usrTag).type(this.usrText);
+        cy.get(this.pssTag).type(this.pssText);
+        cy.get(this.actionTag).click({multiple: true, timeout:2000}).then(() =>{
             cy.url().should('eq',this.adminUrl);
         });
     }

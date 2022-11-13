@@ -1,6 +1,7 @@
 import { LoginPage } from '../../page-object-dist-1/login-page.js';
 import { TagPage } from '../../page-object-dist-1/tag-page.js';
 import { PagesPage } from '../../page-object-dist-1/pages-page.js';
+import { LabsPage } from '../../page-object-dist-1/labs-page.js';
 
 describe('Escenario Asociar tag a pagina', async ()=>{
     let tagPage = new TagPage();
@@ -22,6 +23,7 @@ describe('Escenario Asociar tag a pagina', async ()=>{
             await pagesPage.addTag(tagPage.tagNameText);
             cy.wait(2000);
             await pagesPage.validExistence(pageUri, true, tagPage.tagNameText);
+
         });
     });
   

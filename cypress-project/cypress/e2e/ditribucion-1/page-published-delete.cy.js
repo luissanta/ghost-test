@@ -1,3 +1,4 @@
+import { LabsPage } from '../../page-object-dist-1/labs-page.js';
 import { LoginPage } from '../../page-object-dist-1/login-page.js';
 import { PagesPage } from '../../page-object-dist-1/pages-page.js';
 
@@ -18,6 +19,7 @@ describe('Borrar Pagina publicada', async ()=>{
         await pagesPage.validExistence(pageUri,true);
         cy.wait(2000);
         await pagesPage.deletePage(pageUri);
+        
       });
     });
   
