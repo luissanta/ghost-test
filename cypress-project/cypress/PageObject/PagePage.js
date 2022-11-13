@@ -6,7 +6,6 @@ class PagePage {
         //cy.visit('http://20.102.114.58/ghost/#/pages')
     }
     navigatePage(page) {
-        console.log("Hijo de tu pinche madre")
         console.log(config.siteHost+page)
         cy.visit(config.siteHost+page)
         //cy.visit('http://20.102.114.58/'+page)

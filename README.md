@@ -29,6 +29,7 @@ xpath: ^2.0.3 <br>
 Kraken-Node: 1.0.24 <br>
 Cypress: ^10.10.1 <br>
 Google Chrome: 107.0.5304.107 (Build oficial) (64 bits) <br>
+Windows: Windows 11 Home Single Language 22H2 64 bits
 
 # Funcionalidades
 
