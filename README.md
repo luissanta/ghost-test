@@ -1,9 +1,9 @@
 # Integrantes del equipo 
 
-Luis Fernando Santa <br>
-Luis Felipe García <br>
-Milton Beltrán <br>
-Diego Alejandro Ramírez
+Luis Fernando Santa - l.santa@uniandes.edu.co<br>
+Luis Felipe García - lf.garciar1@uniandes.edu.co <br>
+Milton Beltrán - mj.beltran37@uniandes.edu.co <br>
+Diego Alejandro Ramírez - da.ramirez55@uniandes.edu.co
 
 # Índice general
 
@@ -14,7 +14,7 @@ Diego Alejandro Ramírez
 [Pruebas en Cypress](./cypress-project/) <br>
 [Kraken (pros y contras)](#kraken)<br>
 [Pruebas en Kraken](./kraken-project/) <br>
-[Estrategias de pruebas modificadas]()
+[Estrategias de pruebas modificadas](#estrategias-de-pruebas-modificadas)
 
 # Versiones de software requeridos para la ejecución de los proyectos
 
@@ -147,7 +147,8 @@ En la siguiente sección se presentan los pros y contras de Cypress
 * Versatilidad en la organización de la estructura del código fuente
 ## Contras
 * Curva de aprendizaje moderada
-* No cuenta con una manera nativa de utilizar nativamente los patrones vistos (Given-When-Then y PageObject)
+* No cuenta con una manera nativa de utilizar los patrones vistos (Given-When-Then y PageObject)
+* Las pruebas se pueden ver afectadas por la capacidad de hardware de la máquina en que se ejecutan dado que esto afecta los tiempos de renderizado de elementos
 # Kraken
 En la siguiente sección se presentan los pros y contras de Kraken
 ## Pros
@@ -161,3 +162,17 @@ En la siguiente sección se presentan los pros y contras de Kraken
 * Documentación inexistente
 * Dificultad en la instalación y puesta a punto para iniciar pruebas
 * Falta de mantenimiento
+* No es posible ejecutar varios escenarios de prueba de manera secuencial
+* Incompatibilidad con veriones recientes de sistemas operativos (por ejemplo MacOSX 13.0.1)
+* Curva de aprendizaje muy alta (complejidad alta)
+
+# Estrategias de pruebas modificadas
+A continuación se detalla cómo se ajustaron las estrategias de pruebas respecto al uso de herramientas para testing E2E.
+## Estrategia de pruebas 1
+Se evaluaron 2 herramientas (Cypress y Kraken), sin embargo se decidio usar Cypress porque cuenta con una documentación más completa y la curva de aprendizaje es más corta. <br>
+De esta manera fue descartado el uso de Kraken dado que la curva de aprendizaje es mas alta, la documentación es inexistente y la comunidad esta en una fase inicial de crecimiento, lo cual consideramos un riesgo alto puesto que existe la posibilidad de que el proyecto sea abandonado.<br>
+En conclusión: dado que previamente contemplabamos el uso de Cypress en la estrategia, no es necesario hacer ninguna modificacion durante la iteracion 3 de pruebas de aceptación.
+## Estrategia de pruebas 2
+En la semana actual (semana 5) se decidió incluir el uso de Cypress para el desarrollo de pruebas E2E (2 escenarios de pruebas).<br>
+Estas pruebas se incluirán como parte de las pruebas de sistema ya existentes en el cronograma y se destinaron 3 horas del ingeniero junior para tal fin.<br>
+El archivo de la estrategia de pruebas actualizado se encuentra en la [siguiente ubicación](./estrategias-pruebas/)
