@@ -2,11 +2,11 @@ const { Given, When, Then } = require('@cucumber/cucumber');
 const expect = require('chai').expect;
 
 // Login
-Given('I enter email {string}', async function (email) {
+Given('I enter email {kraken-string}', async function (email) {
     let element = await this.driver.$("//input[@type='email']");
     await element.setValue(email);
 });
-Given('I enter password {string}', async function (password) {
+Given('I enter password {kraken-string}', async function (password) {
     let element = await this.driver.$("//input[@type='password']");
     await element.setValue(password);
 });

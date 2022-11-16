@@ -1,38 +1,38 @@
-Feature: Asociar tag a una pagina
+Feature: Asociar tag a paginas
 
 @user1 @web
 
 Scenario: Hacer Login, crear tags, crear página1, crear página2, añadir tag a página1 y página2, validar tags en páginas desde el dashboard de admin
-Given I navigate to page "http://20.102.114.58/ghost"
-When I wait for 2 seconds
-And I enter email "da.ramirez55@uniandes.edu.co"
+Given Custom I navigate to page "/ghost"
 And I wait for 2 seconds
-And I enter password "Cg94F4J&$#i8qjX@a9iP"
+And I enter email "<EMAIL>"
+And I wait for 2 seconds
+And I enter password "<PASSWORD>"
 And I wait for 2 seconds
 And I click next
 And I wait for 2 seconds
 
-Given I clean data
+And I clean data
 And I wait for 3 seconds
-Given I accept clean data
-Given I press the button close deletion alert
+And I accept clean data
+And I press the button close deletion alert
 And I wait for 3 seconds
 
-Given I navigate to page "http://20.102.114.58/ghost/#/tags"
+And Custom I navigate to page "/ghost/#/tags"
 And I wait for 5 seconds
-And I click on create tag 
+When I click on create tag 
 And I enter name tag "New Tag4"
 And I wait for 2 seconds
 And I click on save tag 
 And I wait for 2 seconds
-Given I navigate to page "http://20.102.114.58/ghost/#/tags"
+And Custom I navigate to page "/ghost/#/tags"
 And I wait for 5 seconds
 And I click on create tag 
 And I enter name tag "temporal tag"
 And I wait for 2 seconds
 And I click on save tag 
 And I wait for 2 seconds
-Given I navigate to page "http://20.102.114.58/ghost/#/pages"
+And Custom I navigate to page "/ghost/#/pages"
 When I click Create page
 And I enter name page "mypage4"
 And I enter description page "mypage"
@@ -58,7 +58,7 @@ And I wait for 5 seconds
 And I click on close publish window
 And I wait for 5 seconds
 And I click on return to pages 
-When I click Create page
+And I click Create page
 And I enter name page "mypage44"
 And I wait for 2 seconds
 And I enter description page "mypage"
@@ -82,7 +82,7 @@ And I click publish
 And I wait for 5 seconds
 And I click on close publish window
 And I wait for 5 seconds
-Given I navigate to page "http://20.102.114.58/ghost/#/tags"
+And Custom I navigate to page "/ghost/#/tags"
 Then I should validate tag in pages "New Tag4"
-Then I should validate tag in pages "temporal tag"
+And I should validate tag in pages "temporal tag"
 And I wait for 5 seconds

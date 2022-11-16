@@ -2,9 +2,9 @@ Feature: Schedule post publication
 
   @user1 @web
   Scenario: Schedule post publication
-    Given I navigate to page "http://20.102.114.58/ghost"
-    And I enter email "da.ramirez55@uniandes.edu.co"
-    And I enter password "Cg94F4J&$#i8qjX@a9iP"
+    Given Custom I navigate to page "/ghost"
+    And I enter email "<EMAIL>"
+    And I enter password "<PASSWORD>"
     And I click sign in
     And I wait for 1 seconds
     When I enter the list of posts

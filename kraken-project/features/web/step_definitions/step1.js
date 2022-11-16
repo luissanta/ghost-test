@@ -1,8 +1,9 @@
 const { Given, When, Then } = require('@cucumber/cucumber');
 const expect = require('chai').expect;
+const data = require('../../../properties.json');
 
 //Login
-When('I click next', async function() {
+When('I click next', async function() {   
     let element = await this.driver.$('#ember12');
     return await element.click();
 })
@@ -42,6 +43,10 @@ Then('I should see {string}', async function(name){
 })
 
 //Common
+Given('Custom I navigate to page {string}', async function (page) {
+    let tempUrl = data.siteHost+page;    
+    return await this.driver.url(tempUrl);
+});
 When('I click on setting', async function () {
     let element = await this.driver.$("//button[@title='Settings']");
     return await element.click();
@@ -131,6 +136,13 @@ Then('I should validate tag in pages {string}', async function (name) {
 });   
 
 //Post
+
+
+When('I click on excerpt post', async function () {
+    let element = await this.driver.$("//textarea[@name='post-setting-custom-excerpt']");
+    return await element.click();
+});
+
 When('I click on delete post', async function () {
     let element = await this.driver.$("//span[normalize-space()='Delete post']");
     return await element.click();

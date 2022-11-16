@@ -1,24 +1,24 @@
-Feature: Eliminar una pagina
+Feature: Editar una pagina
 
 @user1 @web
 
 Scenario: Hacer Login, crear página, borrar página, verificación de borrado en dashboard de admin
-Given I navigate to page "http://20.102.114.58/ghost"
-When I wait for 2 seconds
-And I enter email "da.ramirez55@uniandes.edu.co"
+Given Custom I navigate to page "/ghost"
 And I wait for 2 seconds
-And I enter password "Cg94F4J&$#i8qjX@a9iP"
+And I enter email "<EMAIL>"
+And I wait for 2 seconds
+And I enter password "<PASSWORD>"
 And I wait for 2 seconds
 And I click next
-Given I clean data
+And I wait for 2 seconds
+And I clean data
 And I wait for 3 seconds
-Given I accept clean data
-Given I press the button close deletion alert
+And I accept clean data
+And I press the button close deletion alert
 And I wait for 3 seconds
-Given I navigate to page "http://20.102.114.58/ghost/#/pages"
-And I wait for 3 seconds
+And Custom I navigate to page "/ghost/#/pages"
 When I click Create page
-And I enter name page "mypage77"
+And I enter name page "mypage"
 And I enter description page "mypage"
 And I wait for 2 seconds
 And I click selectPublish
@@ -33,9 +33,7 @@ And I click publish
 And I wait for 5 seconds
 And I click on close publish window
 And I wait for 5 seconds
-And I click on delete page
-And I wait for 3 seconds
-And I click on accept delete page
-And I wait for 3 seconds
-And I should validate post is deleted "mypage77"
-And I wait for 3 seconds
+And Custom I navigate to page "/mypage"
+And I wait for 5 seconds
+Then I should see "mypageeditmypage"
+
