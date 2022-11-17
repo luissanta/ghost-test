@@ -6,18 +6,19 @@ describe('Crear Post', () => {
 
   let logInPage = new LoginPage();
   let postPage = new PostPage();
+  let labsPage = new LabsPage();
 
   beforeEach(() =>{
+      //Given
       logInPage.doLogIn();
-      postPage.createNewPost(false, "escenario crea post");
-      cy.url().then((url)=> cy.wrap(url).as('postUri'));
-      
+      labsPage.clearAdmin();  
   })
 
   
-  it('Escenario para la creación de un post que no se ha publicado', async () => {
-    cy.get('@postUri').then(async (postUri)=>{ 
-      await postPage.validExistence(postUri,true);
-    });
+  it('Escenario para la creación de un post que no se ha publicado',() => {
+    //When
+    postPage.createNewPost(false, "escenario crea post");
+    //Then
+    cy.url().then((url)=> postPage.validExistence(url,true));
   });
 });

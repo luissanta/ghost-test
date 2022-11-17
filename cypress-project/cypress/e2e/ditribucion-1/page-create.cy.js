@@ -6,18 +6,20 @@ import { PagesPage } from '../../page-object-dist-1/pages-page.js';
 describe('Crear Pagina', ()=>{
   let logInPage = new LoginPage();
   let pagesPage = new PagesPage();
+  let labsPage = new LabsPage();
   
   beforeEach(() =>{
+    //Given
     logInPage.doLogIn();
-    pagesPage.createNewPage(false, "escenario crea pagina");
-    cy.url().then((url)=> cy.wrap(url).as('pageUri'));
+    labsPage.clearAdmin();
   })
 
 
-  it('Escenario crear una pagina', async() =>{
-    await cy.get('@pageUri').then(async (pageUri)=>{ 
-      await pagesPage.validExistence(pageUri,true);
-    });
+  it('Escenario crear una pagina', () =>{
+    //When
+    pagesPage.createNewPage(false, "escenario crea pagina");
+    //Then
+    cy.url().then((url)=> pagesPage.validExistence(url,true));      
   });
 
-  });
+});

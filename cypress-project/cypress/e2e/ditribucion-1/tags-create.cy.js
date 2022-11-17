@@ -5,16 +5,21 @@ import { TagPage } from '../../page-object-dist-1/tag-page.js';
 describe('Crear Tag',()=>{
     let tagPage = new TagPage();
     let logInPage = new LoginPage();
+    let labsPage = new LabsPage();
 
     beforeEach(() =>{
+      //Given
       logInPage.doLogIn();
-      tagPage.createNewTag("escenario crea tag");
-      cy.wait(2000);
+      labsPage.clearAdmin();
     })
 
 
-    it('Escenario para la creación de tags ',async () =>{
-      await tagPage.validExistence(true);
+    it('Escenario para la creación de tags ',() =>{
+      //When
+      tagPage.createNewTag("escenario crea tag");
+      //Then
+      cy.wait(2000);
+      tagPage.validExistence(true);
     });
   
   });

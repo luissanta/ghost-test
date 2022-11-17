@@ -8,11 +8,13 @@
         "userPass": "Cg94F4J&$#i8qjX@a9iP",
         "actionElement":"button",
         "actionTagIdentifier":"#ember12",
-        "nextUrlExpected": "ghost/#/site"
+        "nextUrlExpected": "ghost/#/site",
+        "screenshotsPath":""
     },
     "post":{
         "postUrl":"ghost/#/posts",
         "postListIdentifier":"a[class='ember-view permalink gh-list-data gh-post-list-title']",
+        "screenshotsPath":"",
         "creator":{
             "linkTitle":"New post",
             "linkHref": "ghost/#/editor/post/",
@@ -36,6 +38,7 @@
     "tags":{
         "tagsUrl":"ghost/#/tags",
         "tagsListIdentifier": "a[class='ember-view gh-list-data gh-tag-list-title gh-list-cellwidth-70']",
+        "screenshotsPath":"",
         "creator":{
             "linkTitle": "New Tag",
             "linkHref": "ghost/#/tags/new/",
@@ -51,6 +54,7 @@
     "pages":{
         "pagesUrl":"ghost/#/pages",
         "pagesListIdentifier":"a[class='ember-view permalink gh-list-data gh-post-list-title']",
+        "screenshotsPath":"",
         "creator":{
             "linkHref":"ghost/#/editor/page/",
             "titlePlaceholder":"Page Title",
@@ -73,6 +77,8 @@
     "labs":{
         "labsUrl":"ghost/#/settings/labs",
         "cleanButton":"button[class='gh-btn gh-btn-hover-red js-delete']",
-        "deleteConfirm":"button[class='gh-btn gh-btn-red gh-btn-icon ember-view']"
+        "deleteConfirm":"button[class='gh-btn gh-btn-red gh-btn-icon ember-view']",
+        "screenshotsPath":""
+
     }
 }

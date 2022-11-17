@@ -7,10 +7,13 @@ describe('Escenario Asociar tag a pagina', async ()=>{
     let tagPage = new TagPage();
     let logInPage = new LoginPage();
     let pagesPage = new PagesPage();
+    let labsPage = new LabsPage();
 
     beforeEach(() =>{
       logInPage.doLogIn();
-      tagPage.createNewTag("e1");
+      labsPage.clearAdmin();
+      //Given
+      tagPage.createNewTag();
       cy.wait(2000);
       pagesPage.createNewPage(false, "escenario asigna tag a pagina");
       cy.url().then((url)=> cy.wrap(url).as('pageUri'));
@@ -18,12 +21,14 @@ describe('Escenario Asociar tag a pagina', async ()=>{
     })
 
 
-    it('Given I am logged in ', async () =>{
-        cy.get('@pageUri').then(async (pageUri)=>{ 
-            await pagesPage.addTag(tagPage.tagNameText);
+    it('Given I am logged in ', () =>{
+        cy.get('@pageUri').then((pageUri)=>{
+            //When 
+            pagesPage.addTag(tagPage.tagNameText);
             cy.wait(2000);
-            await pagesPage.validExistence(pageUri, true, tagPage.tagNameText);
-
+            
+            //Then
+            pagesPage.validExistence(pageUri, true, tagPage.tagNameText);
         });
     });
   
