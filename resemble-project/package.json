@@ -1,0 +1,15 @@
+{
+  "name": "resemble-palette-color",
+  "version": "1.0.0",
+  "description": "",
+  "main": "index.js",
+  "scripts": {
+    "test": "node index.js"
+  },
+  "author": "luis santa",
+  "license": "ISC",
+  "dependencies": {
+    "playwright": "^1.27.1",
+    "resemblejs": "^4.1.0"
+  }
+}

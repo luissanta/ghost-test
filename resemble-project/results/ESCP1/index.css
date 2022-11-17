@@ -1,0 +1,68 @@
+@import url('https://fonts.googleapis.com/css2?family=Tajawal:wght@400;500;700&family=Varela+Round&display=swap');
+
+body {
+    font-family: "Tajawal", Arial, serif;
+}
+
+.info {
+    margin-top: -18px;
+}
+
+.step {
+    margin-top: -10px;
+}
+
+.browser {
+    position: relative;
+    margin: 5px auto;
+    padding:20px 30px;
+    background-color: #f9f9f9;
+    min-height: 40px;
+    break-inside: avoid;
+}
+
+.title {
+    padding: 5px 0;
+}
+
+.img-line {
+    position: relative;
+    display: -webkit-box;
+    display: -webkit-flex;
+    display: -ms-flexbox;
+    display: flex;
+}
+
+.img-container {
+    -webkit-flex: 1 1 auto;
+    -ms-flex: 1 1 auto;
+    flex: 1 1 auto;
+    padding: 20px 0 0;
+    text-align: center;
+}
+
+.img-container-div {
+    padding-right: 18px;
+}
+
+.img-name {
+    font-weight: bold;
+    text-align: center;
+    font-family: latoregular, serif;
+    color: #787878;
+    display: block;
+    margin: 0 auto;
+    text-transform: uppercase;
+    padding: 5px 0 15px;
+    font-size: 13px;
+}
+
+.img-step {
+    width: auto;
+    max-width: 100%;
+    max-height: 400px;
+    border: 1px solid #c6c6c6;
+    border-radius: 8px;
+}
+
+
