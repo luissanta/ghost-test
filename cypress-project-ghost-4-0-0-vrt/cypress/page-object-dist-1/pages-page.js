@@ -40,9 +40,7 @@ export class PagesPage{
     }
 
     fillPageContent(){
-        cy.get("textarea").filter((index,area)=>{
-            return area.placeholder == this.titlePlaceHolder;
-        }).type(this.titleText);
+        cy.get(this.titlePlaceHolder).type(this.titleText);
         cy.get(this.contentIdent).click().type(this.contentText ,{force:true});
         takeScreenShot();
     }
