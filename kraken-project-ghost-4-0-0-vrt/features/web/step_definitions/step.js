@@ -1,6 +1,6 @@
 const { Given, When, Then } = require('@cucumber/cucumber');
 const expect = require('chai').expect;
-
+const data = require('../../../properties.json');
 // Login
 Given('I enter email {kraken-string}', async function (email) {
     let element = await this.driver.$("//input[@type='email']");
@@ -11,7 +11,7 @@ Given('I enter password {kraken-string}', async function (password) {
     await element.setValue(password);
 });
 Given('I click sign in', async function () {
-    let element = await this.driver.$("//span[normalize-space()='Sign in']");
+    let element = await this.driver.$("//span[contains(text(),'Sign in →')]");
     await element.click();
 });
 
@@ -22,11 +22,11 @@ When('I enter the list of posts', async function () {
     await element.click();
 })
 When('I press the create post button', async function () {
-    let element = await this.driver.$("//span[normalize-space()='New post']");
+    let element = await this.driver.$("//a[contains(@title,'New post')]//span");
     await element.click();
 })
 When('I fill the post title field {string}', async function (postTitle) {
-    let element = await this.driver.$("//textarea[@placeholder='Post Title']");
+    let element = await this.driver.$("//textarea[@placeholder='Post title']");
     await element.setValue(postTitle);
 })
 When('I fill the post body field {string}', async function (postBody) {
@@ -55,18 +55,29 @@ When('I press the publish button', async function () {
     await element.click();
 })
 When('I press the button to confirm the publication of a post', async function () {
-    let element = await this.driver.$("//button[@class='gh-btn gh-btn-blue gh-publishmenu-button gh-btn-icon ember-view']//span[contains(text(),'Publish')]");
+    let element = await this.driver.$("//button[contains(@class,'gh-btn gh-btn-black gh-publishmenu-button gh-btn-icon ember-view')]//span[contains(text(),'Publish')]");
     await element.click();
 })
+
+When('I press the button the confirmation modal publish', async function () {
+    let element = await this.driver.$("//button[contains(@class,'gh-btn gh-btn-black gh-btn-icon ember-view')]//span[contains(text(),'Publish')]");
+    await element.click();
+
+})
+When('I press the button the confirmation modal publish schedule', async function () {
+    let element = await this.driver.$("//span[normalize-space()='Schedule']");
+    await element.click();
+
+})
+
 When('I press the button to return to the post list', async function () {
-    let element = await this.driver.$("//a[@class='blue link fw4 flex items-center ember-view']");
+    let element = await this.driver.$("//span[normalize-space()='Posts']");
     await element.click();
 })
 When('I press the button to close the confirmation modal of the publication of a post', async function () {
     let element = await this.driver.$("//button[@class='gh-notification-close']//*[name()='svg']//*[name()='path' and contains(@d,'M12.707 12')]");
     await element.click();
 })
-
 
 // Schedule post publication
 When('I press the button to schedule post publication', async function () {
@@ -100,7 +111,7 @@ When('I save the tag', async function () {
     await element.click();
 });
 When('I close the configuration', async function () {
-    let element = await this.driver.$("//button[@aria-label='Close']");
+    let element = await this.driver.$("//span[@class='settings-menu-open']");
     await element.click();
 });
 When('I press the button to return to the tag list', async function () {
@@ -118,7 +129,7 @@ When('I find the tag {string}', async function(tagName){
 
 // Create page
 When('I enter the list of pages', async function () {
-    let element = await this.driver.$("(//a[normalize-space()='Pages'])[1]");
+    let element = await this.driver.$("(//a[@href='#/pages/'])[1]");
     await element.click();
 })
 When('I press the create page button', async function () {
@@ -126,7 +137,7 @@ When('I press the create page button', async function () {
     await element.click();
 })
 When('I fill the page title field {string}', async function (pageTitle) {
-    let element = await this.driver.$("//textarea[@placeholder='Page Title']");
+    let element = await this.driver.$("//textarea[@placeholder='Page title']");                                       
     await element.setValue(pageTitle);
 })
 When('I fill the page body field {string}', async function (pageBody) {
@@ -138,11 +149,11 @@ When('I press the publish page button', async function () {
     await element.click();
 })
 When('I press the button to confirm the publication of a page', async function () {
-    let element = await this.driver.$("//button[@class='gh-btn gh-btn-blue gh-publishmenu-button gh-btn-icon ember-view']//span[contains(text(),'Publish')]");
+    let element = await this.driver.$("//button[contains(@class,'gh-btn gh-btn-black gh-publishmenu-button gh-btn-icon ember-view')]//span[contains(text(),'Publish')]");                                       
     await element.click();
 })
 When('I press the button to return to the page list', async function () {
-    let element = await this.driver.$("//a[@class='blue link fw4 flex items-center ember-view']");
+    let element = await this.driver.$("//span[normalize-space()='Pages']");
     await element.click();
 })
 When('I press the button to close the confirmation modal of the publication of a page', async function () {
@@ -181,12 +192,21 @@ Then('I can not find any post in the list', async function(){
 
 
 // Clear ghost
+
+Given('I press the config button', async function () {
+    //let element = await this.driver.$("//a[@class='active ember-view gh-nav-bottom-tabicon']");
+    //await element.click();
+    let tempUrl = data.siteHost+"/ghost/#/settings/labs";    
+    await this.driver.url(tempUrl);
+});
 Given('I press the labs button', async function () {
-    let element = await this.driver.$("(//a[normalize-space()='Labs'])[1]");
-    await element.click();
+    //let element = await this.driver.$("(//a[normalize-space()='Labs'])[1]");
+    //await element.click();
+    let tempUrl = data.siteHost+"/ghost/#/settings/labs";    
+    await this.driver.url(tempUrl);
 });
 Given('I press the delete all button', async function () {
-    let element = await this.driver.$("//span[normalize-space()='Delete']");
+    let element = await this.driver.$("//span[normalize-space()='Delete']");         
     await element.click();
 });
 Given('I press the confirm delete all button', async function () {

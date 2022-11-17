@@ -2,16 +2,16 @@ Feature: Delete published page
 
   @user1 @web
   Scenario: Delete published page
-    Given I navigate to page "http://20.102.114.58/ghost"
-    And I enter email "da.ramirez55@uniandes.edu.co"
-    And I enter password "Cg94F4J&$#i8qjX@a9iP"
+    Given Custom I navigate to page "/ghost"
+    And I enter email "<EMAIL>"
+    And I enter password "<PASSWORD>"
     And I click sign in
     And I wait for 1 seconds
     And I press the labs button
     And I press the delete all button
     And I press the confirm delete all button
     And I press the button close deletion alert
-    And I navigate to page "http://20.102.114.58/ghost"
+    And Custom I navigate to page "/ghost"
     When I enter the list of pages
     And I press the create page button
     And I fill the page title field "¿Cómo ser socio?"
@@ -20,10 +20,10 @@ Feature: Delete published page
     And I press the button to confirm the publication of a page
     And I wait for 1 seconds
     And I press the button to return to the page list
-    And I press the button to close the confirmation modal of the publication of a page
-    And I navigate to page "http://20.102.114.58/como-ser-socio"
+    And I press the button to close the confirmation modal of the publication of a page    
+    And Custom I navigate to page "/como-ser-socio"
     And I find the title of the published page "¿Cómo ser socio?"
-    And I navigate to page "http://20.102.114.58/ghost"
+    And Custom I navigate to page "/ghost"
     And I enter the list of pages
     And I select the page to delete
     And I press the button to configuration

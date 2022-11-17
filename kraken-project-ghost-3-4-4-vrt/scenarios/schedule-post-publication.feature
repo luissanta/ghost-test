@@ -1,11 +1,16 @@
-Feature: Schedule post publication
+Feature: ESCP10
 
   @user1 @web
-  Scenario: Schedule post publication
+  Scenario: Login, crear post, publicar programado, verificar estado 'scheduled' en dashboard admin
     Given Custom I navigate to page "/ghost"
     And I enter email "<EMAIL>"
     And I enter password "<PASSWORD>"
     And I click sign in
+    And I wait for 1 seconds        
+    And I press the labs button
+    And I press the delete all button
+    And I press the confirm delete all button
+    And I press the button close deletion alert
     And I wait for 1 seconds
     When I enter the list of posts
     And I press the create post button

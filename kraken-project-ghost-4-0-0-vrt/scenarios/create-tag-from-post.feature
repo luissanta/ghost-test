@@ -1,13 +1,18 @@
-Feature: Create tag from post
+Feature: ESCP06
 
   @user1 @web
-  Scenario: Create tag from post
+  Scenario: Login, crear post y tag desde el post, publicar, validar creación de tag en el dashboard de admin
     Given Custom I navigate to page "/ghost"
     And I wait for 2 seconds
     And I enter email "<EMAIL>"
     And I enter password "<PASSWORD>"
     And I wait for 2 seconds
     And I click sign in
+    And I wait for 1 seconds
+    And I press the labs button
+    And I press the delete all button
+    And I press the confirm delete all button
+    And I press the button close deletion alert    
     And I wait for 2 seconds
     When I enter the list of posts
     And I press the create post button

@@ -1,11 +1,16 @@
-Feature: Publish a page
+Feature: ESCP14
 
   @user1 @web
-  Scenario: Publish a page
+  Scenario: Login, crear página, logout, verificación de usuario externo
     Given Custom I navigate to page "/ghost"
     And I enter email "<EMAIL>"
     And I enter password "<PASSWORD>"
     And I click sign in
+    And I wait for 1 seconds
+    And I press the labs button
+    And I press the delete all button
+    And I press the confirm delete all button
+    And I press the button close deletion alert
     And I wait for 1 seconds
     When I enter the list of pages
     And I press the create page button

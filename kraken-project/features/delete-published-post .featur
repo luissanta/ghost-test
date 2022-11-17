@@ -2,16 +2,16 @@ Feature: Delete published post
 
   @user1 @web
   Scenario: Delete published post
-    Given I navigate to page "http://20.102.114.58/ghost"
-    And I enter email "da.ramirez55@uniandes.edu.co"
-    And I enter password "Cg94F4J&$#i8qjX@a9iP"
+    Given Custom I navigate to page "/ghost"
+    And I enter email "<EMAIL>"
+    And I enter password "<PASSWORD>"
     And I click sign in
     And I wait for 1 seconds
     And I press the labs button
     And I press the delete all button
     And I press the confirm delete all button
     And I press the button close deletion alert
-    And I navigate to page "http://20.102.114.58/ghost"
+    And Custom I navigate to page "/ghost"
     When I enter the list of posts
     And I press the create post button
     And I fill the post title field "¿Cómo ser el mejor Full Stack Developer?"
@@ -21,9 +21,9 @@ Feature: Delete published post
     And I wait for 1 seconds
     And I press the button to return to the post list
     And I press the button to close the confirmation modal of the publication of a post
-    And I navigate to page "http://20.102.114.58"
+    And Custom I navigate to page "/"
     And I find the title of the published post "¿Cómo ser el mejor Full Stack Developer?"
-    And I navigate to page "http://20.102.114.58/ghost"
+    And Custom I navigate to page "/ghost"
     And I enter the list of posts
     And I select the post to delete
     And I press the button to configuration
