@@ -85,9 +85,9 @@ function createReport(scenario, resInfo){
         </head>
         <body>
             <h1>Report for 
-                 <a href="http://20.102.114.58/" target="_blank">Ghost v3.4.4</a>
+                 <a href="http://20.102.114.58/" target="_blank">Ghost v3.41.1</a>
                  versus
-                 <a href="http://20.102.114.58:3002/" target="_blank">Ghost v4.0.0</a>
+                 <a href="http://20.102.114.58:3002/" target="_blank">Ghost v4.44.0</a>
             </h1>
             <h3>Executed: ${scenario}</h3>
             <div id="visualizer">

@@ -9,3 +9,25 @@ V
 &cypress-project/cypress/support/e2e.js,3\c\3c5b7a14eb2beff565c7b6c940ca14710a0f5b62
 Q
 !cypress-project/cypress.config.js,d\8\d894d1ab8270d16c0f244d3fb8a5126503c47cd7
+^
+.cypress-project/cypress/e2e/PublishAPost.cy.js,3\2\32454bb4cfe2164b3f9d248d163c1a9e4921e2b3
+^
+.cypress-project/cypress/e2e/PublishAPage.cy.js,f\1\f16ffbabed33fe0f012709b5576edfc6859f7a96
+_
+/cypress-project/cypress/pages/CreatePagePage.js,f\a\fa4703108a4d64607fc126147aed05cf6ebe9d0d
+L
+cypress-project/package.json,b\6\b6d54cea745e4829dc2ed458f3f5e5da8e0b9866
+9
+	script.py,d\b\db3114d7223bc9bf7f8dd902c5a35833f8ffdf82
+J
+resemble-project/index.css,3\f\3ff258f38c69659f153fc80b76cf616aee5cbd0a
+I
+resemble-project/index.js,b\a\ba99b60b86b35258996f4e63bc0bf2c9524c12e0
+i
+9cypress-project-ghost-3-41-1-vrt/cypress/e2e/ESCP01.cy.js,d\d\dd17616af0eaa9a15813e9dceca13974f9678cbd
+i
+9cypress-project-ghost-4-44-0-vrt/cypress/e2e/ESCP01.cy.js,9\0\905e9da6a5afb8f9a10bcdbc86c01f096a172259
+m
+=kraken-project-ghost-3-41-1-vrt/features/web/support/hooks.js,6\1\61e7f854258debb63a0c8e472df5a465c71fa408
+d
+4kraken-project-ghost-4-44-0-vrt/.kraken/.1_inbox.txt,6\8\68b31f7727a443e0e11990cacd4a0e52e5ae8f31

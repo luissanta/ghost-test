@@ -2,10 +2,10 @@ import os
 
 # Instala dependencias en todos los proyectos
 projects = [
-    'cypress-project-ghost-3-4-4-vrt',
-    'cypress-project-ghost-4-0-0-vrt',
-    'kraken-project-ghost-3-4-4-vrt',
-    'kraken-project-ghost-4-0-0-vrt',
+    'cypress-project-ghost-3-41-1-vrt',
+    'cypress-project-ghost-4-44-0-vrt',
+    'kraken-project-ghost-3-41-1-vrt',
+    'kraken-project-ghost-4-44-0-vrt',
     'resemble-project'
 ]
 
@@ -16,7 +16,7 @@ for project in projects:
 
 
 # Ejecuta todos los test en ambas versiones de kraken
-kraken_directories = ['kraken-project-ghost-3-4-4-vrt', 'kraken-project-ghost-4-0-0-vrt']
+kraken_directories = ['kraken-project-ghost-3-41-1-vrt', 'kraken-project-ghost-4-44-0-vrt']
 
 for kraken_directory in kraken_directories:
     kraken_scenarios = os.listdir(kraken_directory + '/scenarios')
@@ -32,13 +32,13 @@ for kraken_directory in kraken_directories:
 kraken_directory_scenarios = os.listdir(kraken_directories[0] + '/results')
 
 for kraken_directory_scenario in kraken_directory_scenarios:
-    os.system('cp -rl kraken-project-ghost-3-4-4-vrt/results/' + kraken_directory_scenario +
-              '* kraken-project-ghost-4-0-0-vrt/results/' + kraken_directory_scenario +
+    os.system('cp -rl kraken-project-ghost-3-41-1-vrt/results/' + kraken_directory_scenario +
+              '* kraken-project-ghost-4-44-0-vrt/results/' + kraken_directory_scenario +
               '* resemble-project/results/')
 
 # for i in range(1, 3):
-#     os.system('cp -rl cypress-project-ghost-3-4-4-vrt/results/ESCP' + str(i) +
-#               '* cypress-project-ghost-4-0-0-vrt/results/ESCP' + str(i) +
+#     os.system('cp -rl cypress-project-ghost-3-41-1-vrt/results/ESCP' + str(i) +
+#               '* cypress-project-ghost-4-44-0-vrt/results/ESCP' + str(i) +
 #               '* resemble-project/results/')
 #
 
