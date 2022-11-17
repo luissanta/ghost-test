@@ -55,11 +55,11 @@ When('I press the publish button', async function () {
     await element.click();
 })
 When('I press the button to confirm the publication of a post', async function () {
-    let element = await this.driver.$("//button[contains(@class,'gh-btn gh-btn-black gh-publishmenu-button gh-btn-icon ember-view')]//span[contains(text(),'Publish')]");
+    let element = await this.driver.$("//button[contains(@class,'gh-btn gh-btn-black gh-publishmenu-button gh-btn-icon ember-view')]//span[contains(text(),'Publish')]");    
     await element.click();
 })
 
-When('I press the button the confirmation modal publish', async function () {
+When('I press the button the confirmation modal publish', async function () {    
     let element = await this.driver.$("//button[contains(@class,'gh-btn gh-btn-black gh-btn-icon ember-view')]//span[contains(text(),'Publish')]");
     await element.click();
 

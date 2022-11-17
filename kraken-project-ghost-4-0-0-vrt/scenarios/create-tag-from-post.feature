@@ -14,7 +14,7 @@ Feature: ESCP06
     And I press the confirm delete all button
     And I press the button close deletion alert    
     And I wait for 2 seconds
-    When I enter the list of posts
+    When Custom I navigate to page "/ghost/#/posts"
     And I press the create post button
     And I fill the post title field "¿Cómo ser el mejor Tech Lead?"
     And I fill the post body field "Es bastante probable que con frecuencia encuentres contenido hablando maravillas de un lenguaje."
@@ -22,6 +22,9 @@ Feature: ESCP06
     And I fill the tag field "nuevo tag in post"
     And I save the tag
     And I close the configuration
+    And I press the publish button
+    And I press the button to confirm the publication of a post
+    And I press the button the confirmation modal publish
     And I wait for 1 seconds
     And I press the button to return to the post list
     And I press the button to return to the tag list

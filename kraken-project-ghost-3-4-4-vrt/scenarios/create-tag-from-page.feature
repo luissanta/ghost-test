@@ -21,6 +21,8 @@ Feature: ESCP18
     And I save the tag
     And I wait for 1 seconds
     And I close the configuration
+    And I press the publish page button
+    And I press the button to confirm the publication of a page    
     And I wait for 1 seconds
     And I press the button to return to the page list
     And I wait for 1 seconds

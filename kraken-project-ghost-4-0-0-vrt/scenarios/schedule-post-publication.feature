@@ -12,7 +12,7 @@ Feature: ESCP10
     And I press the confirm delete all button
     And I press the button close deletion alert
     And I wait for 1 seconds
-    When I enter the list of posts
+    When Custom I navigate to page "/ghost/#/posts"
     And I press the create post button
     And I fill the post title field "¿Cómo ser el mejor Tech Lead?"
     And I fill the post body field "Es bastante probable que con frecuencia encuentres contenido hablando maravillas de un lenguaje."

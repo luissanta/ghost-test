@@ -17,6 +17,8 @@ Feature: Create tag from post
     And I fill the tag field "nuevo tag in post"
     And I save the tag
     And I close the configuration
+    And I press the publish page button
+    And I press the button to confirm the publication of a page 
     And I wait for 1 seconds
     And I press the button to return to the post list
     And I press the button to return to the tag list
