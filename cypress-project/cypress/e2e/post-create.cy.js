@@ -1,6 +1,6 @@
-import { LabsPage } from '../../page-object-dist-1/labs-page.js';
-import { LoginPage } from '../../page-object-dist-1/login-page.js';
-import { PostPage } from '../../page-object-dist-1/post-page.js';
+import { LabsPage } from '../page-object-dist-1/labs-page.js';
+import { LoginPage } from '../page-object-dist-1/login-page.js';
+import { PostPage } from '../page-object-dist-1/post-page.js';
 
 describe('Crear Post', () => {
 

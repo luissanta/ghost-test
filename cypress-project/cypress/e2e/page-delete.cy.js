@@ -1,6 +1,6 @@
-import { LabsPage } from '../../page-object-dist-1/labs-page';
-import { LoginPage } from '../../page-object-dist-1/login-page';
-import { PagesPage } from '../../page-object-dist-1/pages-page.js';
+import { LabsPage } from '../page-object-dist-1/labs-page';
+import { LoginPage } from '../page-object-dist-1/login-page';
+import { PagesPage } from '../page-object-dist-1/pages-page.js';
 
 
 describe('Borrar Pagina', async ()=>{
