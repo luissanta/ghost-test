@@ -1,6 +1,8 @@
 # Ambiente de Ghost
 Haciendo uso de Microsoft Azure, se desplegó un servidor en donde se instaló Ghost. <br>
-Todas las pruebas están ajustadas apuntando hacia el ambiente de Ghost en la URL http://20.102.114.58/ghost
+En este servidor se están corriendo dos versiones simultaneas de la aplicación: <br>
+Versión 3.41.1: http://20.102.114.58/ghost <br>
+Versión 4.44.0: http://20.102.114.58:3002/ghost
 
 # Integrantes del equipo 
 
@@ -12,6 +14,7 @@ Diego Alejandro Ramírez - da.ramirez55@uniandes.edu.co
 # Índice general
 
 [Versiones de software requeridas](#versiones-de-software-requeridos-para-la-ejecución-de-los-proyectos)<br>
+[Estructura del proyecto](#estructura-del-proyecto)<br>
 [Descripción de funcionalidades](#funcionalidades)<br>
 [Descripción de escenarios de pruebas](#escenarios-de-pruebas) <br>
 [Cypress (pros y contras)](#cypress) <br>
@@ -22,14 +25,28 @@ Diego Alejandro Ramírez - da.ramirez55@uniandes.edu.co
 
 # Versiones de software requeridos para la ejecución de los proyectos
 
-Ghost: 3.41.1 <br>
+Ghost: 3.41.1 y 4.44.0 <br>
 Node: 14.20.1 <br>
 npm: 6.14.17 <br>
-xpath: ^2.0.3 <br>
+xpath: ^2.0.1 <br>
 Kraken-Node: 1.0.24 <br>
-Cypress: ^10.10.1 <br>
+Cypress: ^10.10.0 <br>
 Google Chrome: 107.0.5304.107 (Build oficial) (64 bits) <br>
 Windows: Windows 11 Home Single Language 22H2 64 bits
+
+# Estructura del proyecto
+## Cypress
+├── cypress-project ***--->(Pruebas semana 5 - 20 escenarios)***<br>
+├── cypress-project-ghost-3-4-4-vrt ***--->(Pruebas semana 6 - versión Ghost 3.4 - 5 escenarios)***<br>
+├── cypress-project-ghost-4-0-0-vrt ***--->(Pruebas semana 6 - versión Ghost 4.44 - 5 escenarios)***<br>
+
+## Kraken
+├── kraken-project ***--->(Pruebas semana 5 - 20 escenarios)***<br>
+├── kraken-project-ghost-3-4-4-vrt ***--->(Pruebas semana 6 - versión Ghost 3.4 - 5 escenarios)***<br>
+├── kraken-project-ghost-4-0-0-vrt ***--->(Pruebas semana 6 - versión Ghost 4.44 - 5 escenarios)***<br>
+
+## Estrategias de pruebas
+├── estrategias-pruebas ***--->(Estrategias de pruebas actualizadas)***
 
 # Funcionalidades
 
