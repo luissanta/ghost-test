@@ -1,3 +1,5 @@
+import takeScreenShot from '../utils/funcs.js';
+
 class PostPage {
     constructor () {
         this.buttonDialogSchedules = "//span[@class='gh-notification-title']"

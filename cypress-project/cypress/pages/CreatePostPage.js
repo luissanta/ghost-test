@@ -1,3 +1,5 @@
+import takeScreenShot from '../utils/funcs.js';
+
 class CreatePostPage {
     constructor () {
         this.buttonPosts = "//a[@class='ember-view']"
@@ -20,35 +22,45 @@ class CreatePostPage {
 
     createPost = (postTitle, postBody) => {
         cy.xpath(this.buttonPosts).contains("Post").click({force: true})
-        cy.wait(2000);
+        takeScreenShot();  
         cy.xpath(this.buttonCreatePost).click()
-        cy.wait(2000);
+        takeScreenShot();  
         cy.xpath(this.postTitle).type(postTitle)
         cy.xpath(this.postBody).type(postBody)
+        takeScreenShot();  
     }
 
     publishPost = () => {
         cy.xpath(this.buttonPublish).click()
+        takeScreenShot();  
         cy.xpath(this.buttonPublishNow).click()
-        cy.wait(300)
+        takeScreenShot();  
         cy.xpath(this.buttonReturnPosts).contains("Posts").click()
+        takeScreenShot();  
         cy.xpath(this.buttonCloseNotifyNewPosts).click()
+        takeScreenShot();  
     }
 
     createTagFromPost = (tagName) => {
         cy.xpath(this.buttonSetting).click()
+        takeScreenShot();  
         cy.xpath(this.nameTag).type(tagName + '{enter}')
+        takeScreenShot();  
         cy.xpath(this.buttonCloseTag).click()
-        cy.wait(300)
+        takeScreenShot();  
         cy.xpath(this.buttonReturnPosts).contains("Posts").click()
+        takeScreenShot();  
     }
 
     schedulePostPublication = () => {
         cy.xpath(this.buttonPublish).click()
+        takeScreenShot();  
         cy.xpath(this.radioButtonSelectSchedulesPost).click()
+        takeScreenShot();  
         cy.xpath(this.buttonSchedulesPost).click()
-        cy.wait(300)
+        takeScreenShot();  
         cy.xpath(this.buttonReturnPosts).contains("Posts").click()
+        takeScreenShot();  
     }
 }
 

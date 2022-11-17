@@ -1,3 +1,4 @@
+import takeScreenShot from '../utils/funcs.js';
 let config = require('../../config.json');
 
 export class TagPage{
@@ -15,24 +16,27 @@ export class TagPage{
         this.tagGenUrl = this.tagUrl+"/"+this.tagNameText.replaceAll(" ","-");
     }
 
-    async createNewTag(sufix=""){
-        await cy.visit(this.tagUrl).then(async ()=>{
-            await this.openCreatorView();
-            await this.saveTagContent();
+    createNewTag(){
+        cy.visit(this.tagUrl).then(async ()=>{
+            takeScreenShot();
+            this.openCreatorView();
+            this.saveTagContent();
         });
     }
 
     openCreatorView(){ 
         cy.get('a').filter((index,link)=>{
             return link.href == this.linkHref;
-        }).click();
+        }).first().click();
+        takeScreenShot();
     }
 
-    async saveTagContent(){
-        await cy.get(this.tagName).type(this.tagNameText);
-        await cy.get(this.saveButton).click().then(()=>{
-            cy.wait(2000);
+    saveTagContent(){
+        cy.get(this.tagName).type(this.tagNameText);
+        cy.get(this.saveButton).click().then(()=>{
+            takeScreenShot();
             cy.visit(this.tagUrl);
+            takeScreenShot();
         });
     }
 
@@ -45,7 +49,9 @@ export class TagPage{
                         return this.url == elementLink.href
                     }).should('have.length', exist?1:0);
                 }
-            })  
+            });
+            
+            takeScreenShot();
         })
 
     }

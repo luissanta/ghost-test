@@ -1,3 +1,5 @@
+import takeScreenShot from '../utils/funcs.js';
+
 let config = require('../../config.json');
 
 export class PagesPage{
@@ -17,15 +19,16 @@ export class PagesPage{
         this.publishConfirm = config.pages.creator.publishConfirm;
         this.tagInput = config.pages.tagg.input;
         this.tagSelected = config.pages.tagg.selectorCheck;
+        this.screenshotPath = config.pages.screenshotsPath;
     }
 
-    async createNewPage(hadPublish, sufix=""){
+    createNewPage(hadPublish, sufix=""){
         this.titleText = this.titleText+sufix;       
-        await cy.visit(this.pagesUrl).then(async ()=>{
-            cy.wait(2000)
-            await this.openEditorView();
-            await this.fillPageContent();
-            await this.publishPage(hadPublish);
+        cy.visit(this.pagesUrl).then(()=>{
+            takeScreenShot();
+            this.openEditorView();
+            this.fillPageContent();
+            this.publishPage(hadPublish);
         });
     }
 
@@ -33,21 +36,23 @@ export class PagesPage{
         cy.get('a').filter((index,link)=>{
             return link.href == this.linkHref;
         }).first().click();
+        takeScreenShot();
     }
 
     fillPageContent(){
         cy.get("textarea").filter((index,area)=>{
             return area.placeholder == this.titlePlaceHolder;
         }).type(this.titleText);
-        
         cy.get(this.contentIdent).click().type(this.contentText ,{force:true});
+        takeScreenShot();
     }
 
     publishPage(hadPublish){
         if(hadPublish){
             cy.get(this.publishButton).click().then(()=>{
+                takeScreenShot();
                 cy.get(this.publishConfirm).click();
-                cy.wait(2000);
+                takeScreenShot();
             });
         }
     }
@@ -61,29 +66,36 @@ export class PagesPage{
                 }).should('have.length', exist?1:0)
                 .and('contain',tagName);
             }
+            takeScreenShot();
         })  
     }
 
     deletePage(pageLink){
         cy.visit(pageLink).then(()=>{
-            cy.get(this.buttonPageSetting).click({force:true}).then(async ()=>{
-                await cy.get(this.buttonDeletePage).click({force:true});
-                cy.wait(2000);
-                await cy.get(this.modalButtonDelete).click({force:true});
+            takeScreenShot();
+            cy.get(this.buttonPageSetting).click({force:true}).then(()=>{
+                takeScreenShot();
+                cy.get(this.buttonDeletePage).click({force:true});
+                takeScreenShot();
+                cy.get(this.modalButtonDelete).click({force:true});
+                takeScreenShot();
             });
         });
     }
 
     addTag(tagName){
-        cy.get(this.buttonPageSetting).click({force:true}).then(async ()=>{
-            await cy.get(this.tagInput).type(tagName).then(()=>{
+        cy.get(this.buttonPageSetting).click({force:true}).then(()=>{
+            cy.get(this.tagInput).type(tagName).then(()=>{
                 cy.get(this.tagSelected).first().click();
+                takeScreenShot();
             });
+            takeScreenShot();
         });
     }
 
     checkUserView(){
         let publicPageUrl = config.siteHost+(this.titleText.replaceAll(" ","-"));
         cy.visit(publicPageUrl, {timeOut:3000}).contains(this.titleText);
+        takeScreenShot();
     }
 }

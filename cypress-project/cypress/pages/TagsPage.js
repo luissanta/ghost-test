@@ -1,3 +1,5 @@
+import takeScreenShot from '../utils/funcs.js';
+
 let config = require('../../config.json')
 class TagsPage {
     constructor () {

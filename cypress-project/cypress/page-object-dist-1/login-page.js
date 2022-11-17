@@ -1,3 +1,4 @@
+import takeScreenShot from '../utils/funcs.js';
 let config = require('../../config.json')
 
 export class LoginPage{
@@ -11,14 +12,17 @@ export class LoginPage{
         this.actionElement = config.logIn.actionElement;
         this.actionTag = config.logIn.actionElement;
         this.adminUrl = config.siteHost+config.logIn.nextUrlExpected;
+        this.screenshotPath = config.logIn.screenshotsPath;
     }
 
     doLogIn() {
         cy.visit(this.logInUrl);
         cy.get(this.usrTag).type(this.usrText);
         cy.get(this.pssTag).type(this.pssText);
+        takeScreenShot();
         cy.get(this.actionTag).click({multiple: true, timeout:2000}).then(() =>{
             cy.url().should('eq',this.adminUrl);
+            takeScreenShot();    
         });
     }
 }

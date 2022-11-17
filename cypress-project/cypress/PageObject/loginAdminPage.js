@@ -1,3 +1,5 @@
+import takeScreenShot from '../utils/funcs.js';
+
 let config = require('../../config.json');
 
 class LoginAdminPage {
@@ -30,11 +32,11 @@ class LoginAdminPage {
 
         login(){
             this.navigate();
-            // this.enterEmail("mj.beltran37@uniandes.edu.co");
-            // this.enterPassword("localhostghowst");
             this.enterEmail(config.logIn.userName);
             this.enterPassword(config.logIn.userPass);
-            this.clickLogin();            
+            takeScreenShot();
+            this.clickLogin();
+            takeScreenShot();            
         }
 
 

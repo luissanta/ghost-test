@@ -1,3 +1,4 @@
+import takeScreenShot from '../utils/funcs.js';
 let config = require('../../config.json');
 
 export class PostPage{
@@ -23,11 +24,11 @@ export class PostPage{
 
     createNewPost(hadPublish = false, sufix=""){
         this.titleText = this.titleText+sufix;
-        cy.visit(this.postUrl).then(async ()=>{
-            cy.wait(2000);
-            await this.openEditorView();
-            await this.fillPostContent();
-            await this.publishPost(hadPublish);
+        cy.visit(this.postUrl).then(()=>{
+            takeScreenShot();
+            this.openEditorView();
+            this.fillPostContent();
+            this.publishPost(hadPublish);
             cy.wait(2000);
         });
     }
@@ -36,6 +37,7 @@ export class PostPage{
         cy.get('a').filter((index,link)=>{
             return link.href == this.linkHref && link.title != undefined && link.title == this.linkTitle;
         }).click();
+        takeScreenShot();
     }
 
     fillPostContent(){
@@ -43,14 +45,15 @@ export class PostPage{
             return area.placeholder == this.titlePlaceholder;
         }).type(this.titleText);
         cy.get(this.contentIdent).click().type(this.contentText,{force:true});
-
+        takeScreenShot();
     }
 
     publishPost(hadPublish){
         if(hadPublish){
             cy.get(this.publishButton).click().then(()=>{
+                takeScreenShot();
                 cy.get(this.publishConfirm).click();
-                cy.wait(2000);
+                takeScreenShot();
             });
         }
     }
@@ -65,40 +68,49 @@ export class PostPage{
                 }).should('have.length', exist?1:0)
                 .and('contain',tagName);
             }
+            takeScreenShot();
         })  
     }
 
 
     deletePost(postLink){
         cy.visit(postLink).then(()=>{
-            cy.get(this.buttonPostSetting).click({force:true}).then(async ()=>{
-                await cy.get(this.buttonDeletePost).click({force:true});
-                cy.wait(2000);
-                await cy.get(this.modalButtonDelete).click({force:true});
+            takeScreenShot();
+            cy.get(this.buttonPostSetting).click({force:true}).then(()=>{
+                takeScreenShot();
+                cy.get(this.buttonDeletePost).click({force:true});
+                takeScreenShot();
+                cy.get(this.modalButtonDelete).click({force:true});
+                takeScreenShot();
             });
         });
     }
 
     addTag(tagName){
-        cy.get(this.buttonPostSetting).click({force:true}).then(async ()=>{
-            await cy.get(this.tagInput).type(tagName).then(()=>{
+        cy.get(this.buttonPostSetting).click({force:true}).then(()=>{
+            cy.get(this.tagInput).type(tagName).then(()=>{
                 cy.get(this.tagSelector).first().click();
+                takeScreenShot();
             });
+            takeScreenShot();
         });
     }
 
     checkUserView(){
         let publicPostUrl = config.siteHost+(this.titleText.replaceAll(" ","-"));
         cy.visit(publicPostUrl, {timeOut:3000}).contains(this.titleText);
+        takeScreenShot();
     }
 
     unpublishPost(postLink){
         cy.visit(postLink).then(()=>{
-            
-            cy.get(this.publishButton).click({force:true}).then(async ()=>{
-                await cy.get(".gh-publishmenu-radio").first().click({force:true});
-                await cy.get(this.publishConfirm).click({force:true});
-                cy.wait(2000);
+            takeScreenShot();
+            cy.get(this.publishButton).click({force:true}).then(()=>{
+                takeScreenShot();
+                cy.get(".gh-publishmenu-radio").first().click({force:true});
+                takeScreenShot();
+                cy.get(this.publishConfirm).click({force:true});
+                takeScreenShot();
             });
         });
     }

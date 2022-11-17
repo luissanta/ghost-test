@@ -1,3 +1,5 @@
+import takeScreenShot from '../utils/funcs.js';
+
 class CreatePagePage {
     constructor () {
         this.buttonPages = "(//a[normalize-space()='Pages'])[1]"
@@ -18,27 +20,32 @@ class CreatePagePage {
 
     createPage = (pageTitle, pageBody) => {
         cy.xpath(this.buttonPages).click()
-        cy.wait(500)
+        takeScreenShot();  
         cy.xpath(this.buttonCreatePage).click()
         cy.xpath(this.pageTitle).type(pageTitle)
         cy.xpath(this.pageBody).type(pageBody)
+        takeScreenShot();  
     }
 
     createTagFromPage = (tagName) => {
         cy.xpath(this.buttonSetting).click()
+        takeScreenShot();  
         cy.xpath(this.nameTag).type(tagName + '{enter}')
         cy.xpath(this.buttonCloseTag).click()
-        cy.wait(300)
+        takeScreenShot();  
         cy.xpath(this.buttonReturnPages).contains("Pages").click()
+        takeScreenShot();  
     }
 
     publishPage = () => {
         cy.xpath(this.buttonPublish).click()
+        takeScreenShot();  
         cy.xpath(this.buttonPublishNow).click()
-        cy.wait(2000)
+        takeScreenShot();  
         cy.xpath(this.buttonReturnPages).contains("Pages").click()
+        takeScreenShot();  
         cy.xpath(this.buttonCloseNotifyNewPage).click()
-        cy.wait(2000)
+        takeScreenShot();  
     }
 }
 

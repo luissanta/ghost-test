@@ -1,3 +1,5 @@
+import takeScreenShot from '../utils/funcs.js';
+
 let config = require('../../config.json')
 
 class LandingPage {
@@ -7,16 +9,18 @@ class LandingPage {
 
     ValidatePost = (postTitle, postBody) => {
         cy.visit(this.urlLanding)
-        cy.wait(2000);
+        takeScreenShot();  
         cy.contains(postTitle)
         cy.contains(postBody)
+        takeScreenShot();  
     }
 
     ValidatePage = (pageTitle, pageBody, urlPage) => {
         cy.visit(this.urlLanding + urlPage)
-        cy.wait(2000);
+        takeScreenShot();  
         cy.contains(pageTitle)
         cy.contains(pageBody)
+        takeScreenShot();  
     }
 }
 
