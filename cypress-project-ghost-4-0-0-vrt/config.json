@@ -1,14 +1,14 @@
 {
-    "siteHost":"http://20.102.114.58/",
+    "siteHost":"http://20.102.114.58:3002/",
     "logIn":{
         "logInUrl": "ghost/#/signin",
-        "userTagIdentifier":"#ember8",
+        "userTagIdentifier":"#ember7",
         "userName": "da.ramirez55@uniandes.edu.co",
-        "passTagIdentifier":"#ember10",
+        "passTagIdentifier":"#ember9",
         "userPass": "Cg94F4J&$#i8qjX@a9iP",
         "actionElement":"button",
-        "actionTagIdentifier":"#ember12",
-        "nextUrlExpected": "ghost/#/site",
+        "actionTagIdentifier":"#ember11",
+        "nextUrlExpected": "ghost/#/dashboard",
         "screenshotsPath":""
     },
     "post":{
