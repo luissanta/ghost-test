@@ -18,7 +18,7 @@
         "creator":{
             "linkTitle":"New post",
             "linkHref": "ghost/#/editor/post/",
-            "titlePlaceholder":"Post Title",
+            "titlePlaceholder":"textarea[class='gh-editor-title ember-text-area gh-input ember-view']",
             "titleText":"Cypress testing creator post",
             "contentIdentifier":"[data-placeholder='Begin writing your post...']",
             "contentText":"This is my test post content...",
@@ -26,7 +26,7 @@
             "publishConfirm":"button[class='gh-btn gh-btn-blue gh-publishmenu-button gh-btn-icon ember-view']"
         },
         "eraser":{
-            "buttonSetting":"button[class='post-settings']",
+            "buttonSetting":"button[class='settings-menu-toggle gh-btn gh-btn-editor gh-btn-icon icon-only gh-btn-action-icon']",
             "buttonDelete":"button[class='gh-btn gh-btn-hover-red gh-btn-icon settings-menu-delete-button']",
             "modalButtonConfirm": "button[class='gh-btn gh-btn-red gh-btn-icon ember-view']"
         },
@@ -42,7 +42,7 @@
         "creator":{
             "linkTitle": "New Tag",
             "linkHref": "ghost/#/tags/new/",
-            "saveButton": "button[class='gh-btn gh-btn-blue gh-btn-icon ember-view']",
+            "saveButton": "button[class='gh-btn gh-btn-primary gh-btn-icon ember-view']",
             "body":{
                 "tagName":"#tag-name",
                 "tagNameText":"new tag",
@@ -57,7 +57,7 @@
         "screenshotsPath":"",
         "creator":{
             "linkHref":"ghost/#/editor/page/",
-            "titlePlaceholder":"Page Title",
+            "titlePlaceholder":"textarea[class='gh-editor-title ember-text-area gh-input ember-view']",
             "titleText":"Creando una nueva pagina",
             "contentIdentifier":"[data-placeholder='Begin writing your page...']",
             "contentText":"This is my test page content...",
@@ -65,7 +65,7 @@
             "publishConfirm":"button[class='gh-btn gh-btn-blue gh-publishmenu-button gh-btn-icon ember-view']"
         },
         "eraser":{
-            "buttonSetting":"button[class='post-settings']",
+            "buttonSetting":"button[class='settings-menu-toggle gh-btn gh-btn-editor gh-btn-icon icon-only gh-btn-action-icon']",
             "buttonDelete":"button[class='gh-btn gh-btn-hover-red gh-btn-icon settings-menu-delete-button']",
             "modalButtonConfirm": "button[class='gh-btn gh-btn-red gh-btn-icon ember-view']"
         },
@@ -76,7 +76,7 @@
     },
     "labs":{
         "labsUrl":"ghost/#/settings/labs",
-        "cleanButton":"button[class='gh-btn gh-btn-hover-red js-delete']",
+        "cleanButton":"button[class='gh-btn gh-btn-red js-delete']",
         "deleteConfirm":"button[class='gh-btn gh-btn-red gh-btn-icon ember-view']",
         "screenshotsPath":""
 

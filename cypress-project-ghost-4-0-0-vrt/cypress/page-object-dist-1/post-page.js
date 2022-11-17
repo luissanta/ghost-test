@@ -41,9 +41,7 @@ export class PostPage{
     }
 
     fillPostContent(){
-        cy.get("textarea").filter((index,area)=>{
-            return area.placeholder == this.titlePlaceholder;
-        }).type(this.titleText);
+        cy.get("textarea").type(this.titleText);
         cy.get(this.contentIdent).click().type(this.contentText,{force:true});
         takeScreenShot();
     }
