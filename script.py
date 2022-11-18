@@ -41,11 +41,23 @@ for kraken_directory_scenario in kraken_directory_scenarios:
               '* kraken-project-ghost-4-44-0-vrt/results/' + kraken_directory_scenario +
               '* resemble-project/results/')
 
-# for i in range(1, 3):
-#     os.system('cp -rl cypress-project-ghost-3-41-1-vrt/results/ESCP' + str(i) +
-#               '* cypress-project-ghost-4-44-0-vrt/results/ESCP' + str(i) +
-#               '* resemble-project/results/')
-#
+
+# Ejecuta todos los test en ambas versiones de cypress
+cypress_directories = ['cypress-project-ghost-3-41-1-vrt', 'cypress-project-ghost-4-44-0-vrt']
+
+for cypress_directory in cypress_directories:
+    os.chdir(cypress_directory)
+    os.system('npm run run')
+    os.chdir('..')
+
+
+# Extrae todos los screenshots de cypress para ser analizados por resemble
+cypress_directory_scenarios = os.listdir(cypress_directories[0] + '/results')
+
+for cypress_directory_scenario in cypress_directory_scenarios:
+    os.system('cp -rl cypress-project-ghost-3-41-1-vrt/results/' + cypress_directory_scenario +
+              '* cypress-project-ghost-4-44-0-vrt/results/' + cypress_directory_scenario +
+              '* resemble-project/results/')
 
 
 # Ejecuta el análisis de comparación de los escenarios de pruebas en diferentes versiones

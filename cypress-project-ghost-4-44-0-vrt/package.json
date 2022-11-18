@@ -4,7 +4,8 @@
   "description": "",
   "main": "index.js",
   "scripts": {
-    "test": "cypress open --browser chrome --e2e"
+    "test": "cypress open --browser chrome --e2e",
+    "run": "cypress run"
   },
   "author": "",
   "license": "ISC",

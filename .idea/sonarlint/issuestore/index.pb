@@ -15,14 +15,10 @@ Q
 .cypress-project/cypress/e2e/PublishAPage.cy.js,f\1\f16ffbabed33fe0f012709b5576edfc6859f7a96
 _
 /cypress-project/cypress/pages/CreatePagePage.js,f\a\fa4703108a4d64607fc126147aed05cf6ebe9d0d
-L
-cypress-project/package.json,b\6\b6d54cea745e4829dc2ed458f3f5e5da8e0b9866
 9
 	script.py,d\b\db3114d7223bc9bf7f8dd902c5a35833f8ffdf82
 J
 resemble-project/index.css,3\f\3ff258f38c69659f153fc80b76cf616aee5cbd0a
-I
-resemble-project/index.js,b\a\ba99b60b86b35258996f4e63bc0bf2c9524c12e0
 i
 9cypress-project-ghost-3-41-1-vrt/cypress/e2e/ESCP01.cy.js,d\d\dd17616af0eaa9a15813e9dceca13974f9678cbd
 i
