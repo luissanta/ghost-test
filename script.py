@@ -6,6 +6,8 @@ projects = [
     'cypress-project-ghost-4-44-0-vrt',
     'kraken-project-ghost-3-41-1-vrt',
     'kraken-project-ghost-4-44-0-vrt',
+    'kraken-project',
+    'cypress-project',
     'resemble-project'
 ]
 
