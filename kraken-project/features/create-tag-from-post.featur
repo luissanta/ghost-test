@@ -1,0 +1,25 @@
+Feature: Create tag from post
+
+  @user1 @web
+  Scenario: Create tag from post
+    Given Custom I navigate to page "/ghost"
+    And I wait for 2 seconds
+    And I enter email "<EMAIL>"
+    And I enter password "<PASSWORD>"
+    And I wait for 2 seconds
+    And I click sign in
+    And I wait for 2 seconds
+    When I enter the list of posts
+    And I press the create post button
+    And I fill the post title field "¿Cómo ser el mejor Tech Lead?"
+    And I fill the post body field "Es bastante probable que con frecuencia encuentres contenido hablando maravillas de un lenguaje."
+    And I press the button to configuration
+    And I fill the tag field "nuevo tag in post"
+    And I save the tag
+    And I close the configuration
+    And I press the publish page button
+    And I press the button to confirm the publication of a page 
+    And I wait for 1 seconds
+    And I press the button to return to the post list
+    And I press the button to return to the tag list
+    Then I find the tag "nuevo tag in post"

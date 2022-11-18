@@ -1,0 +1,17 @@
+Feature: Create post
+
+  @user1 @web
+  Scenario: Create post
+    Given Custom I navigate to page "/ghost"
+    And I enter email "<EMAIL>"
+    And I enter password "<PASSWORD>"
+    And I click sign in
+    And I wait for 1 seconds
+    When I enter the list of posts
+    And I press the create post button
+    And I fill the post title field "¿Cómo ser el mejor Front Developer?"
+    And I fill the post body field "Hablando maravillas de PHP."
+    And I wait for 1 seconds
+    And I press the button to return to the post list
+    And I wait for 1 seconds
+    Then I find the title of the post "¿Cómo ser el mejor Front Developer?"
