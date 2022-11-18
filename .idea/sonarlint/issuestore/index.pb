@@ -27,3 +27,13 @@ m
 =kraken-project-ghost-3-41-1-vrt/features/web/support/hooks.js,6\1\61e7f854258debb63a0c8e472df5a465c71fa408
 d
 4kraken-project-ghost-4-44-0-vrt/.kraken/.1_inbox.txt,6\8\68b31f7727a443e0e11990cacd4a0e52e5ae8f31
+
+Okraken-project-ghost-3-41-1-vrt/features/web/step_definitions/stepScreenShot.js,1\a\1a980551fde6a1c118ba334a766293897a60b422
+L
+cypress-project/package.json,b\6\b6d54cea745e4829dc2ed458f3f5e5da8e0b9866
+]
+-cypress-project-ghost-4-44-0-vrt/package.json,f\2\f2c5bc2aca61129d2a5bd73057ac388d37f788ac
+]
+-cypress-project-ghost-3-41-1-vrt/package.json,6\d\6d3d03954f6ab70b9c85dfb20a2e51d88d80b0df
+I
+resemble-project/index.js,b\a\ba99b60b86b35258996f4e63bc0bf2c9524c12e0

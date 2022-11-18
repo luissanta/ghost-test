@@ -1,3 +1,15 @@
-kraken-project/screenshots
+# Kraken
 kraken-project/reports
 kraken-project/results
+kraken-project-ghost-3-41-1-vrt/reports
+kraken-project-ghost-3-41-1-vrt/results
+kraken-project-ghost-4-44-0-vrt/reports
+kraken-project-ghost-4-44-0-vrt/results
+
+# Cypress
+cypress-project/results
+cypress-project-ghost-3-41-1-vrt/results
+cypress-project-ghost-4-44-0-vrt/results
+
+# Resemble
+resemble-project/results
