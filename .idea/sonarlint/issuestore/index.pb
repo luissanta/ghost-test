@@ -1,8 +1,4 @@
 
-J
-cypress-project/.gitignore,7\9\79bfb871be34f67c22e6da0d2170f5d05fbbf402
-I
-kraken-project/.gitignore,1\1\111a58299000bb9c6cc6162892d626097789c1de
 [
 +cypress-project/cypress/support/commands.js,b\a\ba255094ef668a7e3126da7c5d579dc4181f2b3d
 V
@@ -15,8 +11,6 @@ Q
 .cypress-project/cypress/e2e/PublishAPage.cy.js,f\1\f16ffbabed33fe0f012709b5576edfc6859f7a96
 _
 /cypress-project/cypress/pages/CreatePagePage.js,f\a\fa4703108a4d64607fc126147aed05cf6ebe9d0d
-9
-	script.py,d\b\db3114d7223bc9bf7f8dd902c5a35833f8ffdf82
 J
 resemble-project/index.css,3\f\3ff258f38c69659f153fc80b76cf616aee5cbd0a
 i
@@ -25,8 +19,6 @@ i
 9cypress-project-ghost-4-44-0-vrt/cypress/e2e/ESCP01.cy.js,9\0\905e9da6a5afb8f9a10bcdbc86c01f096a172259
 m
 =kraken-project-ghost-3-41-1-vrt/features/web/support/hooks.js,6\1\61e7f854258debb63a0c8e472df5a465c71fa408
-d
-4kraken-project-ghost-4-44-0-vrt/.kraken/.1_inbox.txt,6\8\68b31f7727a443e0e11990cacd4a0e52e5ae8f31
 
 Okraken-project-ghost-3-41-1-vrt/features/web/step_definitions/stepScreenShot.js,1\a\1a980551fde6a1c118ba334a766293897a60b422
 L
@@ -35,5 +27,3 @@ L
 -cypress-project-ghost-4-44-0-vrt/package.json,f\2\f2c5bc2aca61129d2a5bd73057ac388d37f788ac
 ]
 -cypress-project-ghost-3-41-1-vrt/package.json,6\d\6d3d03954f6ab70b9c85dfb20a2e51d88d80b0df
-I
-resemble-project/index.js,b\a\ba99b60b86b35258996f4e63bc0bf2c9524c12e0
