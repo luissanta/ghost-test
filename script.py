@@ -49,7 +49,7 @@ cypress_directories = ['cypress-project-ghost-3-41-1-vrt', 'cypress-project-ghos
 
 for cypress_directory in cypress_directories:
     os.chdir(cypress_directory)
-    os.system('npm run run')
+    os.system('npm run test')
     os.chdir('..')
 
 

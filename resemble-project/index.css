@@ -4,10 +4,14 @@ body {
     font-family: "Tajawal", Arial, serif;
 }
 
-h2 {
+.step-title {
     display: inline-block;
     width: 70%;
     padding: 5px;
+}
+
+h3 {
+    margin-top: -12px;
 }
 
 .badge-pass {
@@ -99,5 +103,3 @@ h2 {
     border: 1px solid #c6c6c6;
     border-radius: 8px;
 }
-
-

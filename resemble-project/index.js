@@ -54,7 +54,7 @@ function browser(step, resInfo){
     return `
     <div class="browser" id="test">
         <div class="title">
-            <h2 class="step">Step: ${step}</h2><div class="${resInfo.passClass}">${resInfo.passText}</div>
+            <h2 class="step step-title">Step: ${step}</h2><div class="${resInfo.passClass}">${resInfo.passText}</div>
             <p>Mis Match Percentage: <b>${resInfo.misMatchPercentage}%</b> - Raw Mis Match Percentage: <b>${resInfo.rawMisMatchPercentage}%</b></p>
             <p class="info">Is Same Dimensions: <b>${resInfo.isSameDimensions}</b> - Dimension Difference: <b>${JSON.stringify(resInfo.dimensionDifference)}</b></p>
             <p class="info">Diff Bounds: <b>${JSON.stringify(resInfo.diffBounds)}</b> - Analysis Time: <b>${resInfo.analysisTime}ms</b></p>
@@ -89,7 +89,8 @@ function createReport(scenario, resInfo){
                  versus
                  <a href="http://20.102.114.58:3002/" target="_blank">Ghost v4.44.0</a>
             </h1>
-            <h3>Executed: ${scenario}</h3>
+            <h2>Executed: ${scenario}</h2>
+            <h3>Percentage to pass test: less than ${percentageToPassTest}%</h3>
             <div id="visualizer">
                 ${steps.map(step=>browser(step, resInfo[step]))}
             </div>
