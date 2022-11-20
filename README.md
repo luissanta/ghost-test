@@ -44,13 +44,13 @@ Windows: Windows 11 Home Single Language 22H2 64 bits <br>
 # Estructura del proyecto
 ## Cypress
 ├── cypress-project ***--->(Pruebas semana 5 - 20 escenarios)***<br>
-├── cypress-project-ghost-3-4-4-vrt ***--->(Pruebas semana 6 - versión Ghost 3.4 - 5 escenarios)***<br>
-├── cypress-project-ghost-4-0-0-vrt ***--->(Pruebas semana 6 - versión Ghost 4.44 - 5 escenarios)***<br>
+├── cypress-project-ghost-3-41-1-vrt ***--->(Pruebas semana 6 - versión Ghost 3.4 - 5 escenarios)***<br>
+├── cypress-project-ghost-4-44-0-vrt ***--->(Pruebas semana 6 - versión Ghost 4.44 - 5 escenarios)***<br>
 
 ## Kraken
 ├── kraken-project ***--->(Pruebas semana 5 - 20 escenarios)***<br>
-├── kraken-project-ghost-3-4-4-vrt ***--->(Pruebas semana 6 - versión Ghost 3.4 - 5 escenarios)***<br>
-├── kraken-project-ghost-4-0-0-vrt ***--->(Pruebas semana 6 - versión Ghost 4.44 - 5 escenarios)***<br>
+├── kraken-project-ghost-3-41-1-vrt ***--->(Pruebas semana 6 - versión Ghost 3.4 - 5 escenarios)***<br>
+├── kraken-project-ghost-4-44-0-vrt ***--->(Pruebas semana 6 - versión Ghost 4.44 - 5 escenarios)***<br>
 
 ## Estrategias de pruebas
 ├── estrategias-pruebas ***--->(Estrategias de pruebas actualizadas)***
