@@ -15,6 +15,10 @@ Diego Alejandro Ramírez - da.ramirez55@uniandes.edu.co
 
 [Versiones de software requeridas](#versiones-de-software-requeridos-para-la-ejecución-de-los-proyectos)<br>
 [Estructura del proyecto](#estructura-del-proyecto)<br>
+[Instrucciones para ejecución (semana 6)](#instrucciones-para-ejecución-del-proyecto-semana-6)<br>
+[Video Semana 6](https://uniandes-my.sharepoint.com/:v:/g/personal/da_ramirez55_uniandes_edu_co/EWVv6kuuSgdImPxGDLLq-K0BiJff5XXrBiN8zu9VBvm00w?e=XUzQ0r) _Recuerde que por restricción de la universidad debe tener usuario registrado Uniandes_<br>
+[Reporte de diferencias visuales](https://github.com/luissanta/ghost-test/issues)<br>
+[Pros y contras semana 6](#pros-y-contras-semana-6)<br>
 [Descripción de funcionalidades](#funcionalidades)<br>
 [Descripción de escenarios de pruebas](#escenarios-de-pruebas) <br>
 [Cypress (pros y contras)](#cypress) <br>
@@ -26,13 +30,16 @@ Diego Alejandro Ramírez - da.ramirez55@uniandes.edu.co
 # Versiones de software requeridos para la ejecución de los proyectos
 
 Ghost: 3.41.1 y 4.44.0 <br>
+Python: 3.10 <br>
+Playwright: ^1.27.1<br>
+Resemblejs: ^4.1.0 <br>
 Node: 14.20.1 <br>
 npm: 6.14.17 <br>
 xpath: ^2.0.1 <br>
 Kraken-Node: 1.0.24 <br>
 Cypress: ^10.10.0 <br>
 Google Chrome: 107.0.5304.107 (Build oficial) (64 bits) <br>
-Windows: Windows 11 Home Single Language 22H2 64 bits
+Windows: Windows 11 Home Single Language 22H2 64 bits <br>
 
 # Estructura del proyecto
 ## Cypress
@@ -47,6 +54,30 @@ Windows: Windows 11 Home Single Language 22H2 64 bits
 
 ## Estrategias de pruebas
 ├── estrategias-pruebas ***--->(Estrategias de pruebas actualizadas)***
+
+## Resemble
+├── resemble-project ***--->(Comparación y reporte HTML)***
+
+# Instrucciones para ejecución del proyecto (semana 6)
+Dado que la ejecución del proyecto completo para la semana 6 requiere múltiples comandos en diferentes carpetas, se creó un script (_script.py_) en Python que ejecuta por el usuario todos los comandos requeridos.
+
+Siga los siguientes pasos para ejecutar el proyecto: <br>
+* Clonar el repositorio con el comando: `git clone https://github.com/luissanta/ghost-test.git`
+* Navegar a la raíz del repositorio: `cd ghost-test`
+* Ejecutar el script de lanzamiento de todas las pruebas del proyecto: `python3 script.py`. Esta ejecución suele tomar algo más de 25 minutos, por favor no cancele el proceso.
+
+***Nota Importante: Dadas las limitaciones para la ejecución de Kraken en diferentes versiones de sistemas operativos, en caso de que el script de ejecución no logre ejecutar las pruebas de kraken, favor ejecutarlas con el binario que se encuentra dentro de la carpeta node_modules***
+
+# Pros y contras semana 6
+## Pros
+* Reducción significativa del tiempo de pruebas de regresión dado que se realiza una comparación automática y de manera rápida entre las diferentes versiones de un proyecto
+* Backstop permite realizar comparaciones dinámicas que permiten una visualización de cambios fácil e interactiva
+* Resemble, por ser un paquete mas abierto a edición, permite realizar ajustes de personalización que deja abierta la posibilidad de entregar informes o resultados de la manera que más se ajuste a las necesidades
+* Tanto Resemble como Backstop son herramientas open source que se pueden implementar rápidamente.
+## Contras
+* Backstop no permite modificación de su código base, esto de manera particular en nuestro proyecto dificultó el uso de dicha herramienta puesto que esta no está preparada para realizar la comparación de imágenes directamente, por el contrario, se requiere de una comparación o entrega de paginas web, que en nuestro caso no aplicaba.
+* Se deben tener conocimientos avanzados en los lenguajes con los que dichas herramientas están construidas para poder realizar cambios como lo fue en nuestro caso: fue requerida una modificación a profundidad en resemble para poder realizar la comparación directa de imágenes.
+* Dado que la comparación de imágenes se realiza pixel a pixel, un cambio de tamaño, posición en pantalla o formato pueden arrojar resultados no confiables en las pruebas si lo que se busca es detectar errores y no cambios.
 
 # Funcionalidades
 
@@ -193,13 +224,10 @@ En la siguiente sección se presentan los pros y contras de Kraken
 * Curva de aprendizaje muy alta (complejidad alta)
 
 # Estrategias de pruebas modificadas
-A continuación se detalla cómo se ajustaron las estrategias de pruebas respecto al uso de herramientas para testing E2E.
-## Estrategia de pruebas 1
-Se evaluaron 2 herramientas (Cypress y Kraken), sin embargo se decidio usar Cypress porque cuenta con una documentación más completa y la curva de aprendizaje es más corta. <br>
-De esta manera fue descartado el uso de Kraken dado que la curva de aprendizaje es mas alta, la documentación es inexistente y la comunidad esta en una fase inicial de crecimiento, lo cual consideramos un riesgo alto puesto que existe la posibilidad de que el proyecto sea abandonado.<br>
-En conclusión: dado que previamente contemplabamos el uso de Cypress en la estrategia, no es necesario hacer ninguna modificacion durante la iteracion 3 de pruebas de aceptación.<br>
-El archivo de la estrategia de pruebas se encuentra en la [siguiente ubicación](./estrategias-pruebas/)
-## Estrategia de pruebas 2
-En la semana actual (semana 5) se decidió incluir el uso de Cypress para el desarrollo de pruebas E2E (2 escenarios de pruebas).<br>
-Estas pruebas se incluirán como parte de las pruebas de sistema ya existentes en el cronograma y se destinaron 3 horas del ingeniero junior para tal fin.<br>
-El archivo de la estrategia de pruebas actualizado se encuentra en la [siguiente ubicación](./estrategias-pruebas/)
+Esta semana para las dos estrategias de pruebas se decidió asignar tiempo de los desarrolladores en la construcción y desarrollo del proceso de automatización de VRT.<br>
+Este proceso es relevante puesto que a mediano plazo significará un ahorro de tiempo y recursos importante. Adicionalmente será posible detectar cambios y posibles fallas que una persona probablemente no notaría a nivel visual en una UI. <br>
+A continuación se encuentran los enlaces a las estrategias de pruebas actualizadas: <br>
+[Estrategias de pruebas actualizadas](./estrategias-pruebas/)<br>
+
+
+
