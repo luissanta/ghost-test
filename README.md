@@ -21,9 +21,7 @@ Diego Alejandro Ramírez - da.ramirez55@uniandes.edu.co
 [Pros y contras semana 6](#pros-y-contras-semana-6)<br>
 [Descripción de funcionalidades](#funcionalidades)<br>
 [Descripción de escenarios de pruebas](#escenarios-de-pruebas) <br>
-[Cypress (pros y contras)](#cypress) <br>
 [Pruebas en Cypress](./cypress-project/) <br>
-[Kraken (pros y contras)](#kraken)<br>
 [Pruebas en Kraken](./kraken-project/) <br>
 [Estrategias de pruebas modificadas](#estrategias-de-pruebas-modificadas)
 
@@ -65,6 +63,7 @@ Siga los siguientes pasos para ejecutar el proyecto: <br>
 * Clonar el repositorio con el comando: `git clone https://github.com/luissanta/ghost-test.git`
 * Navegar a la raíz del repositorio: `cd ghost-test`
 * Ejecutar el script de lanzamiento de todas las pruebas del proyecto: `python3 script.py`. Esta ejecución suele tomar algo más de 25 minutos, por favor no cancele el proceso.
+* Los archivos HTML que se generan como resultado de la ejecución de las pruebas los podrá encontrar por escenario de pruebas en la carpeta `resemble-project/results`
 
 ***Nota Importante: Dadas las limitaciones para la ejecución de Kraken en diferentes versiones de sistemas operativos, en caso de que el script de ejecución no logre ejecutar las pruebas de kraken, favor ejecutarlas con el binario que se encuentra dentro de la carpeta node_modules***
 
@@ -192,36 +191,6 @@ En la descripción de cada escenario se indica el objetivo principal de la prueb
 |                  |                                                                                        | ·       Validar la asociación del tag con las dos páginas en el portal de administrador                               |
 
 
-
-
-# Cypress
-En la siguiente sección se presentan los pros y contras de Cypress
-## Pros
-* Matenimiento y actualizaciones constantes
-* Facilidad en el uso
-* Amplia documentación
-* Compatibilidad con múltiples navegadores
-* Versatilidad en la organización de la estructura del código fuente
-## Contras
-* Curva de aprendizaje moderada
-* No cuenta con una manera nativa de utilizar los patrones vistos (Given-When-Then y PageObject)
-* Las pruebas se pueden ver afectadas por la capacidad de hardware de la máquina en que se ejecutan dado que esto afecta los tiempos de renderizado de elementos
-# Kraken
-En la siguiente sección se presentan los pros y contras de Kraken
-## Pros
-* Fácil codificación
-* Fácil lectura de código
-* Organización nativa de la estructura del código
-* Posibilidad de simular interacción simultanea por varios usuarios (desde diferentes perspectivas) en una misma aplicación
-* Posibilidad de usar señalizaciones
-* Nativamente soporta la capacidad de fácilmente utilizar los patrones vistos (Given-When-Then y PageObject)
-## Contras
-* Documentación inexistente
-* Dificultad en la instalación y puesta a punto para iniciar pruebas
-* Falta de mantenimiento
-* No es posible ejecutar varios escenarios de prueba de manera secuencial
-* Incompatibilidad con veriones recientes de sistemas operativos (por ejemplo MacOSX 13.0.1)
-* Curva de aprendizaje muy alta (complejidad alta)
 
 # Estrategias de pruebas modificadas
 Esta semana para las dos estrategias de pruebas se decidió asignar tiempo de los desarrolladores en la construcción y desarrollo del proceso de automatización de VRT.<br>
